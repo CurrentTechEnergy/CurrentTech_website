@@ -24,6 +24,8 @@
   .contact form { display: flex; flex-direction: column; gap: 16px; }
   .field { display: flex; flex-direction: column; gap: 6px; }
   .field label { font: 500 12px/1.2 var(--font-data); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+  .field .opt { text-transform: none; letter-spacing: 0; }
+  .field .hint { margin: 0; font-size: 14px; color: var(--ink-2); }
   .field input, .field select, .field textarea { font: inherit; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; width: 100%; }
   .field textarea { min-height: 170px; resize: vertical; }
   .field input:focus-visible, .field select:focus-visible, .field textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
@@ -59,12 +61,12 @@
       <div class="contact">
         <form id="contact-form" method="POST" novalidate>
           <div class="row2">
-            <div class="field"><label for="c-name">Name</label><input id="c-name" name="name" type="text" autocomplete="name"></div>
+            <div class="field"><label for="c-name">Name <span class="opt">(optional)</span></label><input id="c-name" name="name" type="text" autocomplete="name"></div>
             <div class="field"><label for="c-email">Email</label><input id="c-email" name="email" type="email" autocomplete="email" required></div>
           </div>
-          <div class="field"><label for="c-org">Organization</label><input id="c-org" name="organization" type="text" autocomplete="organization"></div>
+          <div class="field"><label for="c-org">Organization <span class="opt">(optional)</span></label><input id="c-org" name="organization" type="text" autocomplete="organization"></div>
           <div class="field">
-            <label for="c-topic">About</label>
+            <label for="c-topic">Topic</label>
             <select id="c-topic" name="topic">
               <option value="screening">A free site screening</option>
               <option value="electrification">Flexible electric heat</option>
@@ -73,14 +75,13 @@
               <option value="other">Something else</option>
             </select>
           </div>
-          <div class="field"><label for="c-msg">Message</label><textarea id="c-msg" name="message" required placeholder="Where are your sites, what do they use steam or hot water for, and who supplies power and gas today?"></textarea></div>
+          <div class="field"><label for="c-msg">Message</label><p class="hint" id="c-msg-hint">Where are your sites, what do they use steam or hot water for, and who supplies power and gas today?</p><textarea id="c-msg" name="message" required aria-describedby="c-msg-hint"></textarea></div>
           <div class="hp" aria-hidden="true"><label for="c-gotcha">Leave this empty</label><input id="c-gotcha" name="_gotcha" type="text" tabindex="-1" autocomplete="off"></div>
           <button class="btn" id="c-send" type="submit">Send</button>
           <p class="form-msg" id="c-status" role="status" aria-live="polite"></p>
         </form>
         <ul class="facts">
-          <li><b>Site screening</b>Recent electric and gas bills are enough to start. Steam data helps if you have it.</li>
-          <li><b>Email</b><a href="mailto:blair@currenttech.energy">blair@currenttech.energy</a></li>
+          <li><b>Site screening</b>Recent electric and gas bills for all your sites are enough to start. Steam data helps if you have it. Within about a week you get your sites ranked by potential, with the technology that fits each one.</li>
           <li><b>Privacy</b>Messages are delivered by Formspree, which stores them only to forward them. Your email is used only to reply.</li>
         </ul>
       </div>
@@ -95,7 +96,7 @@
       <a href="../#services">Services</a>
       <a href="https://ercotbids.currenttech.energy/">ERCOT Bids</a>
       <a href="../about/">About</a>
-      <a href="mailto:blair@currenttech.energy">Email</a>
+      <a href="./" aria-current="page">Contact</a>
     </nav>
   </div>
 </footer>
@@ -122,7 +123,7 @@ form.addEventListener("submit", async (e) => {
     if (!r.ok) { const b = await r.json().catch(() => ({})); throw new Error((b.errors || []).map(x => x.message).join(" ") || ""); }
     form.reset(); say("Thanks, your message was sent. Blair will reply by email.");
   } catch (err) {
-    say((err.message ? "That didn't go through: " + err.message + " " : "That didn't go through. ") + "You can also email blair@currenttech.energy.", "err");
+    say((err.message ? "That didn't go through: " + err.message + " " : "That didn't go through. ") + "Please try again in a moment.", "err");
   } finally { send.disabled = false; }
 });
 </script>

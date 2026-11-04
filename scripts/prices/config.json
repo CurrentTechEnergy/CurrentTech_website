@@ -87,8 +87,7 @@
       "node": "SPPNORTH_HUB",
       "tz": "America/Chicago",
       "gas_state": "NE",
-      "gas_sector": "industrial",
-      "required": false
+      "gas_sector": "industrial"
     },
     "spp_south": {
       "file": "spp",
@@ -96,8 +95,7 @@
       "node": "SPPSOUTH_HUB",
       "tz": "America/Chicago",
       "gas_state": "OK",
-      "gas_sector": "industrial",
-      "required": false
+      "gas_sector": "industrial"
     }
   }
 }

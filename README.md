@@ -39,7 +39,7 @@ Break-even is gas $/MMBtu / 0.80 × 3.412 for an electric boiler, times 2 for a 
 
 - ERCOT: West Hub and the hub average, against Texas industrial gas.
 - Wisconsin: the Wisconsin Public Service real-time rate, modeled as max(1.053 × MISO day-ahead LMP at WPS.AZ + $0.53, $7)/MWh. That fit reproduces Blair's July 2025 to June 2026 bill data (correlation 0.999). Against Wisconsin industrial gas. The raw MISO real-time LMP at WPS.AZ is also kept in the JSON for comparison (`wisconsin_rt_lmp`).
-- SPP: computed into the JSON (`spp_north`, `spp_south`, against Nebraska and Oklahoma industrial gas), not shown on the page yet.
+- SPP: North and South hub real-time prices, against Nebraska and Oklahoma industrial gas.
 
 Assumptions (window, efficiencies, nodes, gas states) live in `scripts/prices/config.json`. To refresh by hand: `pip install openpyxl xlrd`, then `python3 scripts/prices/fetch.py && python3 scripts/prices/stats.py`, or run the workflow from the Actions tab.
 

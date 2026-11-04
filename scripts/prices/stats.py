@@ -217,6 +217,7 @@ def main():
         "site": {
             "ercot_period": period_label(e["window_start"], e["window_end"]),
             "wisconsin_period": period_label(regions["wisconsin"]["window_start"], regions["wisconsin"]["window_end"]),
+            "spp_period": period_label(regions["spp_south"]["window_start"], regions["spp_south"]["window_end"]),
             "ercot_hp_low": f"{hp[0]}",
             "ercot_hp_suffix": "%" if hp[0] == hp[1] else f"–{hp[1]}%",
             "ercot_hp_mid_pct": (hp[0] + hp[1]) / 2,
