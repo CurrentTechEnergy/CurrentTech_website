@@ -280,7 +280,8 @@ def spp_day(d):
     gi, ni, pi = hdr.index("GMT Interval"), hdr.index("Settlement Location Name"), hdr.index("LMP")
     for r in rd:
         if len(r) > pi and r[ni] in keep:
-            end = dt.datetime.strptime(r[gi], "%m/%d/%Y %H:%M:%S").replace(tzinfo=UTC)
+            ts = r[gi].strip()
+            end = dt.datetime.strptime(ts, "%m/%d/%Y %H:%M:%S" if ts.count(":") == 2 else "%m/%d/%Y %H:%M").replace(tzinfo=UTC)
             start = (end - dt.timedelta(minutes=5)).replace(minute=0, second=0)
             out.append((start, "rt", r[ni], float(r[pi])))
     log(f"spp: {d} ok")
