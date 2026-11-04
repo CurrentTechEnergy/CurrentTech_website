@@ -1,5 +1,5 @@
 {
- "built": "2026-11-04T19:59Z",
+ "built": "2026-11-04T21:09Z",
  "assumptions": {
   "window_days": 365,
   "gas_boiler_efficiency": 0.8,
@@ -9,22 +9,22 @@
   "cheap_threshold_usd_mwh": 30
  },
  "site": {
-  "ercot_period": "Nov 3, 2025 to Nov 2, 2026",
+  "ercot_period": "Nov 4, 2025 to Nov 3, 2026",
   "wisconsin_period": "Nov 4, 2025 to Nov 3, 2026",
-  "miso_period": "Nov 3, 2025 to Nov 2, 2026",
-  "oge_period": "Nov 5, 2025 to Nov 4, 2026",
+  "miso_period": "Nov 4, 2025 to Nov 3, 2026",
+  "oge_period": "Nov 6, 2025 to Nov 5, 2026",
   "spp_period": "Oct 30, 2025 to Oct 29, 2026",
-  "ercot_hp_low": "64",
+  "ercot_hp_low": "63",
   "ercot_hp_suffix": "\u201365%",
-  "ercot_hp_mid_pct": 64.5,
+  "ercot_hp_mid_pct": 64.0,
   "updated": "Nov 4, 2026"
  },
  "regions": {
   "ercot_west": {
    "node": "HB_WEST",
    "market": "rt",
-   "window_start": "2025-11-03",
-   "window_end": "2026-11-02",
+   "window_start": "2025-11-04",
+   "window_end": "2026-11-03",
    "hours": 8760,
    "gas_state": "TX",
    "gas_sector": "industrial",
@@ -34,22 +34,22 @@
    "gas_months_estimated": 3,
    "breakeven_eb": 15.47,
    "breakeven_hp": 30.95,
-   "eb_hours": 2568,
-   "eb_pct": 29.32,
-   "hp_hours": 5567,
-   "hp_pct": 63.55,
-   "neg_hours": 1062,
-   "neg_pct": 12.12,
-   "cheap_hours": 5383,
-   "cheap_pct": 61.45,
+   "eb_hours": 2562,
+   "eb_pct": 29.25,
+   "hp_hours": 5554,
+   "hp_pct": 63.4,
+   "neg_hours": 1066,
+   "neg_pct": 12.17,
+   "cheap_hours": 5370,
+   "cheap_pct": 61.3,
    "spring_eb_pct": 35.58,
-   "mean_price": 30.95
+   "mean_price": 31.04
   },
   "ercot_hubavg": {
    "node": "HB_HUBAVG",
    "market": "rt",
-   "window_start": "2025-11-03",
-   "window_end": "2026-11-02",
+   "window_start": "2025-11-04",
+   "window_end": "2026-11-03",
    "hours": 8760,
    "gas_state": "TX",
    "gas_sector": "industrial",
@@ -59,16 +59,16 @@
    "gas_months_estimated": 3,
    "breakeven_eb": 15.47,
    "breakeven_hp": 30.95,
-   "eb_hours": 1518,
-   "eb_pct": 17.33,
-   "hp_hours": 5667,
-   "hp_pct": 64.69,
+   "eb_hours": 1509,
+   "eb_pct": 17.23,
+   "hp_hours": 5655,
+   "hp_pct": 64.55,
    "neg_hours": 188,
    "neg_pct": 2.15,
-   "cheap_hours": 5466,
-   "cheap_pct": 62.4,
+   "cheap_hours": 5451,
+   "cheap_pct": 62.23,
    "spring_eb_pct": 15.75,
-   "mean_price": 32.5
+   "mean_price": 32.59
   },
   "wisconsin": {
    "node": "WPS.AZ",
@@ -98,8 +98,8 @@
   "wisconsin_rt_lmp": {
    "node": "WPS.AZ",
    "market": "rt",
-   "window_start": "2025-11-03",
-   "window_end": "2026-11-02",
+   "window_start": "2025-11-04",
+   "window_end": "2026-11-03",
    "hours": 8759,
    "gas_state": "WI",
    "gas_sector": "industrial",
@@ -111,14 +111,14 @@
    "breakeven_hp": 56.84,
    "eb_hours": 4155,
    "eb_pct": 47.44,
-   "hp_hours": 7733,
-   "hp_pct": 88.29,
+   "hp_hours": 7738,
+   "hp_pct": 88.34,
    "neg_hours": 105,
    "neg_pct": 1.2,
-   "cheap_hours": 4655,
-   "cheap_pct": 53.15,
+   "cheap_hours": 4656,
+   "cheap_pct": 53.16,
    "spring_eb_pct": 64.01,
-   "mean_price": 43.17
+   "mean_price": 43.15
   },
   "spp_north": {
    "node": "SPPNORTH_HUB",
@@ -173,8 +173,8 @@
   "oge": {
    "node": "OKGE_OKGE",
    "market": "da",
-   "window_start": "2025-11-05",
-   "window_end": "2026-11-04",
+   "window_start": "2025-11-06",
+   "window_end": "2026-11-05",
    "hours": 8760,
    "gas_state": "OK",
    "gas_sector": "industrial",
@@ -186,14 +186,14 @@
    "breakeven_hp": 33.46,
    "eb_hours": 1437,
    "eb_pct": 16.4,
-   "hp_hours": 4562,
-   "hp_pct": 52.08,
+   "hp_hours": 4573,
+   "hp_pct": 52.2,
    "neg_hours": 442,
    "neg_pct": 5.05,
-   "cheap_hours": 3647,
-   "cheap_pct": 41.63,
+   "cheap_hours": 3655,
+   "cheap_pct": 41.72,
    "spring_eb_pct": 21.38,
-   "mean_price": 38.46
+   "mean_price": 38.43
   }
  }
 }
