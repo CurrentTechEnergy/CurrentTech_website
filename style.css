@@ -64,6 +64,9 @@ img { max-width: 100%; }
   .nav a { padding: 6px 7px; font-size: 13px; }
   .nav a.btn { padding: 7px 11px; }
 }
+@media (max-width: 370px) {
+  .nav .hide-xs { display: none; }
+}
 
 /* sections */
 section { padding-block: 72px; border-bottom: 1px solid var(--line); }
