@@ -54,57 +54,66 @@
       <p class="intro tight">Texas is the clearest case. West Texas wind and solar push West Hub prices below zero for hundreds of hours a year.</p>
       <div class="stats">
         <div class="stat">
+          <p class="tag">Electric boiler beats gas</p>
           <span class="num"><span data-stat="ercot_west.eb_pct">29</span><small>%</small></span>
           <div class="bar" aria-hidden="true"><span data-stat-width="ercot_west.eb_pct" style="width:29%"></span></div>
-          <p>of hours at West Hub, an electric boiler made heat for less than a gas boiler. About <span data-stat="ercot_west.eb_hours">2,570</span> hours.</p>
+          <p>of hours at West Hub. About <span data-stat="ercot_west.eb_hours">2,570</span> hours.</p>
         </div>
         <div class="stat">
-          <span class="num"><span data-stat="site.ercot_hp_low">64</span><small data-stat="site.ercot_hp_suffix">–65%</small></span>
-          <div class="bar" aria-hidden="true"><span data-stat-width="site.ercot_hp_mid_pct" style="width:64%"></span></div>
-          <p>of hours, an industrial heat pump at a COP of 2.0 beat gas, at West Hub and the ERCOT hub average.</p>
+          <p class="tag">Heat pump, COP 2.0, beats gas</p>
+          <span class="num"><span data-stat="ercot_west.hp_pct">64</span><small>%</small></span>
+          <div class="bar" aria-hidden="true"><span data-stat-width="ercot_west.hp_pct" style="width:64%"></span></div>
+          <p>of hours at West Hub. About <span data-stat="ercot_west.hp_hours">5,570</span> hours.</p>
         </div>
         <div class="stat">
+          <p class="tag">Price below $0/MWh</p>
           <span class="num"><span data-stat="ercot_west.neg_pct">12</span><small>%</small></span>
           <div class="bar" aria-hidden="true"><span data-stat-width="ercot_west.neg_pct" style="width:12%"></span></div>
-          <p>of hours at West Hub, the price was below zero. Generators were paying to keep running.</p>
+          <p>of hours at West Hub. About <span data-stat="ercot_west.neg_hours">1,060</span> hours. Generators were paying to keep running.</p>
         </div>
       </div>
       <h3 class="sub">MISO: real-time price in Wisconsin</h3>
       <p class="intro tight">Even in a cold climate, against delivered gas at $<span data-stat="wisconsin_rt_lmp.gas_usd_therm">0.67</span> a therm, MISO's real-time price at the Wisconsin Public Service zone beats gas for much of the year, most of all in spring.</p>
       <div class="stats">
         <div class="stat">
+          <p class="tag">Electric boiler beats gas</p>
           <span class="num"><span data-stat="wisconsin_rt_lmp.eb_pct">47</span><small>%</small></span>
           <div class="bar" aria-hidden="true"><span data-stat-width="wisconsin_rt_lmp.eb_pct" style="width:47%"></span></div>
-          <p>of hours, an electric boiler beat a gas boiler. About <span data-stat="wisconsin_rt_lmp.eb_hours">4,160</span> hours, and <span data-stat="wisconsin_rt_lmp.spring_eb_pct">64</span>% of hours from April to June.</p>
+          <p>of hours at the WPS zone. About <span data-stat="wisconsin_rt_lmp.eb_hours">4,160</span> hours, and <span data-stat="wisconsin_rt_lmp.spring_eb_pct">64</span>% of hours from April to June.</p>
         </div>
         <div class="stat">
+          <p class="tag">Heat pump, COP 2.0, beats gas</p>
           <span class="num"><span data-stat="wisconsin_rt_lmp.hp_pct">88</span><small>%</small></span>
           <div class="bar" aria-hidden="true"><span data-stat-width="wisconsin_rt_lmp.hp_pct" style="width:88%"></span></div>
-          <p>of hours, an industrial heat pump at a COP of 2.0 beat gas.</p>
+          <p>of hours at the WPS zone. About <span data-stat="wisconsin_rt_lmp.hp_hours">7,730</span> hours.</p>
         </div>
         <div class="stat">
-          <span class="num"><span data-stat="wisconsin_rt_lmp.cheap_pct">53</span><small>%</small></span>
-          <div class="bar" aria-hidden="true"><span data-stat-width="wisconsin_rt_lmp.cheap_pct" style="width:53%"></span></div>
-          <p>of hours, the real-time price was under 3¢/kWh. About <span data-stat="wisconsin_rt_lmp.cheap_hours">4,660</span> hours.</p>
+          <p class="tag">Price below $0/MWh</p>
+          <span class="num"><span data-stat="wisconsin_rt_lmp.neg_pct">1</span><small>%</small></span>
+          <div class="bar" aria-hidden="true"><span data-stat-width="wisconsin_rt_lmp.neg_pct" style="width:1%"></span></div>
+          <p>of hours at the WPS zone. About <span data-stat="wisconsin_rt_lmp.neg_hours">100</span> hours. Generators were paying to keep running.</p>
         </div>
       </div>
       <h3 class="sub">SPP: real-time hub prices</h3>
-      <p class="intro tight">Wind in Oklahoma, Kansas and Nebraska regularly pushes SPP prices below zero, often for days at a time.</p>
+      <p class="intro tight">Wind in Oklahoma, Kansas and Nebraska regularly pushes SPP prices below zero, often for days at a time. At SPP South Hub, against Oklahoma gas at $<span data-stat="spp_south.gas_usd_therm">0.39</span> a therm, an electric boiler beat gas in <span data-stat="spp_south.eb_pct">37</span>% of hours, and prices were below zero in <span data-stat="spp_south.neg_pct">17</span>%. The numbers below are North Hub, against Nebraska gas at $<span data-stat="spp_north.gas_usd_therm">0.55</span> a therm.</p>
       <div class="stats">
         <div class="stat">
-          <span class="num"><span data-stat="spp_south.eb_pct">37</span><small>%</small></span>
-          <div class="bar" aria-hidden="true"><span data-stat-width="spp_south.eb_pct" style="width:37%"></span></div>
-          <p>of hours at SPP South Hub, an electric boiler beat a gas boiler, against Oklahoma gas at $<span data-stat="spp_south.gas_usd_therm">0.39</span> a therm.</p>
-        </div>
-        <div class="stat">
+          <p class="tag">Electric boiler beats gas</p>
           <span class="num"><span data-stat="spp_north.eb_pct">56</span><small>%</small></span>
           <div class="bar" aria-hidden="true"><span data-stat-width="spp_north.eb_pct" style="width:56%"></span></div>
-          <p>of hours at SPP North Hub, against Nebraska gas at $<span data-stat="spp_north.gas_usd_therm">0.55</span> a therm. A heat pump beat gas in <span data-stat="spp_north.hp_pct">86</span>% of hours.</p>
+          <p>of hours at SPP North Hub. About <span data-stat="spp_north.eb_hours">4,900</span> hours.</p>
         </div>
         <div class="stat">
-          <span class="num"><span data-stat="spp_south.neg_pct">17</span><small>%</small></span>
-          <div class="bar" aria-hidden="true"><span data-stat-width="spp_south.neg_pct" style="width:17%"></span></div>
-          <p>of hours at SPP South Hub, the real-time price was below zero. About <span data-stat="spp_south.neg_hours">1,460</span> hours.</p>
+          <p class="tag">Heat pump, COP 2.0, beats gas</p>
+          <span class="num"><span data-stat="spp_north.hp_pct">86</span><small>%</small></span>
+          <div class="bar" aria-hidden="true"><span data-stat-width="spp_north.hp_pct" style="width:86%"></span></div>
+          <p>of hours at SPP North Hub. About <span data-stat="spp_north.hp_hours">7,500</span> hours.</p>
+        </div>
+        <div class="stat">
+          <p class="tag">Price below $0/MWh</p>
+          <span class="num"><span data-stat="spp_north.neg_pct">11</span><small>%</small></span>
+          <div class="bar" aria-hidden="true"><span data-stat-width="spp_north.neg_pct" style="width:11%"></span></div>
+          <p>of hours at SPP North Hub. About <span data-stat="spp_north.neg_hours">920</span> hours. Generators were paying to keep running.</p>
         </div>
       </div>
     </div>
@@ -118,19 +127,22 @@
       <h3 class="sub">Wisconsin Public Service (MISO): real-time market pricing</h3>
       <div class="stats">
         <div class="stat">
+          <p class="tag">Electric boiler beats gas</p>
           <span class="num"><span data-stat="wisconsin.eb_pct">30</span><small>%</small></span>
           <div class="bar" aria-hidden="true"><span data-stat-width="wisconsin.eb_pct" style="width:30%"></span></div>
-          <p>of hours, an electric boiler beat a gas boiler. About <span data-stat="wisconsin.eb_hours">2,640</span> hours, and <span data-stat="wisconsin.spring_eb_pct">50</span>% of hours from April to June.</p>
+          <p>of hours. About <span data-stat="wisconsin.eb_hours">2,640</span> hours, and <span data-stat="wisconsin.spring_eb_pct">50</span>% of hours from April to June.</p>
         </div>
         <div class="stat">
+          <p class="tag">Heat pump, COP 2.0, beats gas</p>
           <span class="num"><span data-stat="wisconsin.hp_pct">81</span><small>%</small></span>
           <div class="bar" aria-hidden="true"><span data-stat-width="wisconsin.hp_pct" style="width:81%"></span></div>
-          <p>of hours, an industrial heat pump at a COP of 2.0 beat gas. About <span data-stat="wisconsin.hp_hours">7,130</span> hours.</p>
+          <p>of hours. About <span data-stat="wisconsin.hp_hours">7,130</span> hours.</p>
         </div>
         <div class="stat">
-          <span class="num"><span data-stat="wisconsin.cheap_pct">37</span><small>%</small></span>
-          <div class="bar" aria-hidden="true"><span data-stat-width="wisconsin.cheap_pct" style="width:37%"></span></div>
-          <p>of hours, the rate was under 3¢/kWh. About <span data-stat="wisconsin.cheap_hours">3,200</span> hours.</p>
+          <p class="tag">Price below $0/MWh</p>
+          <span class="num"><span data-stat="wisconsin.neg_pct">0</span><small>%</small></span>
+          <div class="bar" aria-hidden="true"><span data-stat-width="wisconsin.neg_pct" style="width:0%"></span></div>
+          <p>of hours. The rate has a $7/MWh floor, so it never goes below zero, even when MISO does.</p>
         </div>
       </div>
       <p class="intro after">On MISO's raw real-time price at the same zone, an electric boiler beat gas in <span data-stat="wisconsin_rt_lmp.eb_pct">47</span>% of hours, not <span data-stat="wisconsin.eb_pct">30</span>%. The rate follows the day-ahead market, which misses many of the windy hours when real-time prices fall, and adds losses and a price floor.</p>
@@ -138,19 +150,22 @@
       <p class="intro tight">OG&amp;E prices each hour from SPP's day-ahead price for its zone, plus losses and 0.5¢/kWh, against Oklahoma gas at $<span data-stat="oge.gas_usd_therm">0.39</span> a therm. Only load above your baseline pays the hourly price, so a new electric boiler runs entirely on it.</p>
       <div class="stats">
         <div class="stat">
+          <p class="tag">Electric boiler beats gas</p>
           <span class="num"><span data-stat="oge.eb_pct">16</span><small>%</small></span>
           <div class="bar" aria-hidden="true"><span data-stat-width="oge.eb_pct" style="width:16%"></span></div>
-          <p>of hours, an electric boiler beat a gas boiler. About <span data-stat="oge.eb_hours">1,440</span> hours.</p>
+          <p>of hours. About <span data-stat="oge.eb_hours">1,440</span> hours.</p>
         </div>
         <div class="stat">
+          <p class="tag">Heat pump, COP 2.0, beats gas</p>
           <span class="num"><span data-stat="oge.hp_pct">52</span><small>%</small></span>
           <div class="bar" aria-hidden="true"><span data-stat-width="oge.hp_pct" style="width:52%"></span></div>
-          <p>of hours, an industrial heat pump at a COP of 2.0 beat gas. About <span data-stat="oge.hp_hours">4,560</span> hours.</p>
+          <p>of hours. About <span data-stat="oge.hp_hours">4,560</span> hours.</p>
         </div>
         <div class="stat">
-          <span class="num"><span data-stat="oge.cheap_pct">42</span><small>%</small></span>
-          <div class="bar" aria-hidden="true"><span data-stat-width="oge.cheap_pct" style="width:42%"></span></div>
-          <p>of hours, the rate was under 3¢/kWh. About <span data-stat="oge.cheap_hours">3,650</span> hours.</p>
+          <p class="tag">Price below $0/MWh</p>
+          <span class="num"><span data-stat="oge.neg_pct">5</span><small>%</small></span>
+          <div class="bar" aria-hidden="true"><span data-stat-width="oge.neg_pct" style="width:5%"></span></div>
+          <p>of hours. About <span data-stat="oge.neg_hours">440</span> hours. With no floor, negative day-ahead prices pass straight through.</p>
         </div>
       </div>
       <p class="footnote">ERCOT real-time hub prices, <span data-stat="site.ercot_period">Nov 3, 2025 to Nov 2, 2026</span>, against delivered gas at $<span data-stat="ercot_west.gas_usd_therm">0.36</span>/therm ($<span data-stat="ercot_west.gas_usd_mmbtu">3.63</span>/MMBtu) in an 80% efficient boiler (break-even about $<span data-stat="ercot_west.breakeven_eb">15</span>/MWh for an electric boiler, $<span data-stat="ercot_west.breakeven_hp">31</span>/MWh for a COP 2.0 heat pump). Electricity is wholesale energy only, before transmission and delivery charges, which is why how you contract for power matters as much as the equipment. Source: <a href="https://ercotbids.currenttech.energy/prices.html">ERCOT Bids</a>. MISO: real-time LMP at the Wisconsin Public Service zone (WPS.AZ), <span data-stat="site.miso_period">Nov 3, 2025 to Nov 2, 2026</span>, same gas. Wisconsin Public Service: hourly price under its real-time market pricing rate, which follows MISO day-ahead LMPs, <span data-stat="site.wisconsin_period">Nov 4, 2025 to Nov 3, 2026</span>, against delivered gas at $<span data-stat="wisconsin.gas_usd_therm">0.67</span>/therm ($<span data-stat="wisconsin.gas_usd_mmbtu">6.66</span>/MMBtu) in an 80% efficient boiler (break-even about $<span data-stat="wisconsin.breakeven_eb">28</span>/MWh for an electric boiler, $<span data-stat="wisconsin.breakeven_hp">57</span>/MWh for a COP 2.0 heat pump). SPP: real-time hub prices, <span data-stat="site.spp_period">Oct 30, 2025 to Oct 29, 2026</span>, against delivered gas in an 80% efficient boiler (break-even about $<span data-stat="spp_south.breakeven_eb">17</span>/MWh at South Hub, $<span data-stat="spp_north.breakeven_eb">24</span>/MWh at North Hub, for an electric boiler). OG&amp;E: Day-Ahead Pricing (Oklahoma schedule DAP) modeled as SPP day-ahead LMP for the OG&amp;E zone, plus 5.3% losses and 0.5¢/kWh, <span data-stat="site.oge_period">Nov 5, 2025 to Nov 4, 2026</span>, against Oklahoma gas (break-even about $<span data-stat="oge.breakeven_eb">17</span>/MWh). OG&amp;E's hourly prices are confidential to its customers, so these are our estimate from public SPP prices. Delivered gas is EIA's average industrial price for each state over the same months. Updated daily; last update <span data-stat="site.updated">Nov 4, 2026</span>.</p>

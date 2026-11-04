@@ -79,6 +79,7 @@ h3 { font-size: 20px; line-height: 1.2; margin: 0 0 8px; }
 .stat .num { font: 500 clamp(36px, 5vw, 48px)/1 var(--font-data); color: var(--ink); }
 .stat .num small { font-size: 0.5em; color: var(--muted); }
 .stat p { margin: 0; color: var(--ink-2); font-size: 15px; }
+.stat .tag { font: 500 11px/1.3 var(--font-data); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
 .bar { height: 6px; border-radius: 3px; background: var(--line); overflow: hidden; }
 .bar span { display: block; height: 100%; background: var(--accent); }
 .footnote { font-size: 13px; color: var(--muted); max-width: 90ch; margin: 18px 0 0; }
