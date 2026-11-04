@@ -1,0 +1,103 @@
+{
+  "fetch_days": 400,
+  "refresh_days": 5,
+  "keep_days": 450,
+  "window_days": 365,
+  "gas_heat_content_mmbtu_per_mcf": 1.037,
+  "gas_boiler_efficiency": 0.8,
+  "electric_boiler_efficiency": 1.0,
+  "heat_pump_cop": 2.0,
+  "cheap_threshold_usd_mwh": 30,
+  "ercot": {
+    "nodes": [
+      "HB_WEST",
+      "HB_HUBAVG",
+      "HB_NORTH",
+      "HB_HOUSTON",
+      "HB_SOUTH",
+      "HB_PAN"
+    ]
+  },
+  "miso": {
+    "markets": [
+      "rt",
+      "da"
+    ],
+    "probe_node": "WPS.AZ",
+    "nodes": [
+      "WPS.AZ",
+      "WEC.AZ",
+      "ALTE.AZ",
+      "MGE.AZ",
+      "MINN.HUB",
+      "ILLINOIS.HUB",
+      "MICHIGAN.HUB",
+      "INDIANA.HUB"
+    ]
+  },
+  "spp": {
+    "nodes": [
+      "SPPNORTH_HUB",
+      "SPPSOUTH_HUB"
+    ]
+  },
+  "regions": {
+    "ercot_west": {
+      "file": "ercot",
+      "market": "rt",
+      "node": "HB_WEST",
+      "tz": "America/Chicago",
+      "gas_state": "TX",
+      "gas_sector": "industrial"
+    },
+    "ercot_hubavg": {
+      "file": "ercot",
+      "market": "rt",
+      "node": "HB_HUBAVG",
+      "tz": "America/Chicago",
+      "gas_state": "TX",
+      "gas_sector": "industrial"
+    },
+    "wisconsin": {
+      "file": "miso",
+      "market": "da",
+      "node": "WPS.AZ",
+      "tz": "America/Chicago",
+      "gas_state": "WI",
+      "gas_sector": "industrial",
+      "price_model": {
+        "note": "Wisconsin Public Service real-time rate: day-ahead LMP at WPS.AZ, fitted to Blair's Jul 2025-Jun 2026 bill data (r=0.999)",
+        "scale": 1.053,
+        "adder": 0.53,
+        "floor": 7.0
+      }
+    },
+    "wisconsin_rt_lmp": {
+      "file": "miso",
+      "market": "rt",
+      "node": "WPS.AZ",
+      "tz": "America/Chicago",
+      "gas_state": "WI",
+      "gas_sector": "industrial",
+      "required": false
+    },
+    "spp_north": {
+      "file": "spp",
+      "market": "rt",
+      "node": "SPPNORTH_HUB",
+      "tz": "America/Chicago",
+      "gas_state": "NE",
+      "gas_sector": "industrial",
+      "required": false
+    },
+    "spp_south": {
+      "file": "spp",
+      "market": "rt",
+      "node": "SPPSOUTH_HUB",
+      "tz": "America/Chicago",
+      "gas_state": "OK",
+      "gas_sector": "industrial",
+      "required": false
+    }
+  }
+}

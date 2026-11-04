@@ -26,7 +26,21 @@ Then open http://localhost:8000.
 
 ## Updating the numbers
 
-The home page compares hourly electricity prices with **delivered** gas in an 80% efficient boiler:
+The home page numbers update themselves. Every day the **Update market prices** workflow (`.github/workflows/update-prices.yml`) runs:
 
-- ERCOT: 2025 real-time hub prices from `site/data/prices_years.json.gz` in the ERCOT Bids repository, against $0.40/therm ($4.00/MMBtu). Break-even is 4.00 / 0.80 × 3.412 ≈ $17/MWh for an electric boiler and twice that (≈ $34/MWh) for a heat pump at COP 2.
-- Wisconsin (MISO): a utility real-time rate, July 2025 to June 2026, against $0.65/therm ($6.50/MMBtu). Break-even ≈ $28/MWh for an electric boiler, $55/MWh for a COP 2 heat pump.
+1. `scripts/prices/fetch.py` pulls hourly prices into `data/prices/` (only the days not already cached):
+   - ERCOT real-time hub prices: ERCOT reports NP6-905-CD (last ~8 days) and NP6-785-ER (yearly, to fill gaps).
+   - MISO real-time final and day-ahead ex-post LMPs: daily CSVs from docs.misoenergy.org.
+   - SPP real-time (RTBM) LMPs at SPP North and South hubs: daily CSVs from portal.spp.org.
+   - Delivered natural gas: EIA monthly industrial and commercial price by state (not Henry Hub).
+2. `scripts/prices/stats.py` computes, for the last 365 days, the share of hours an electric boiler and a COP 2 heat pump beat an 80% efficient gas boiler, writes `data/market-stats.json`, and rewrites every element in the HTML that has a `data-stat` attribute.
+
+Break-even is gas $/MMBtu / 0.80 × 3.412 for an electric boiler, times 2 for a heat pump. Gas is the EIA state industrial price averaged over the window's months; months EIA hasn't published yet use the same month a year earlier.
+
+- ERCOT: West Hub and the hub average, against Texas industrial gas.
+- Wisconsin: the Wisconsin Public Service real-time rate, modeled as max(1.053 × MISO day-ahead LMP at WPS.AZ + $0.53, $7)/MWh. That fit reproduces Blair's July 2025 to June 2026 bill data (correlation 0.999). Against Wisconsin industrial gas. The raw MISO real-time LMP at WPS.AZ is also kept in the JSON for comparison (`wisconsin_rt_lmp`).
+- SPP: computed into the JSON (`spp_north`, `spp_south`, against Nebraska and Oklahoma industrial gas), not shown on the page yet.
+
+Assumptions (window, efficiencies, nodes, gas states) live in `scripts/prices/config.json`. To refresh by hand: `pip install openpyxl xlrd`, then `python3 scripts/prices/fetch.py && python3 scripts/prices/stats.py`, or run the workflow from the Actions tab.
+
+When editing copy in `#numbers` or the ERCOT Bids chart, keep the `data-stat` attributes; the words around them are free to change.
