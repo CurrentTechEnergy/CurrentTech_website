@@ -54,17 +54,17 @@
     <div class="wrap">
       <p class="eyebrow">A worked example: ERCOT, 2025</p>
       <h2>Cheap hours aren't rare. They're a resource.</h2>
-      <p class="intro">Texas is the clearest case, and we track it daily: every hour of 2025, real-time ERCOT prices against what it cost to make the same heat with gas that day. The same pattern runs through SPP and MISO, where wind regularly pushes prices low or below zero. We run this analysis for the market, hub, node or utility tariff your sites actually face.</p>
+      <p class="intro">Texas is the clearest case, and we track it daily: every hour of 2025, real-time ERCOT prices against what it costs to make the same heat with delivered gas. The same pattern runs through SPP and MISO, where wind regularly pushes prices low or below zero. We run this analysis for the market, hub, node or utility tariff your sites actually face.</p>
       <div class="stats">
         <div class="stat">
-          <span class="num">21<small>%</small></span>
-          <div class="bar" aria-hidden="true"><span style="width:21%"></span></div>
-          <p>of hours at West Hub, an electric boiler made heat for less than a gas boiler. About 1,860 hours.</p>
+          <span class="num">26<small>%</small></span>
+          <div class="bar" aria-hidden="true"><span style="width:26%"></span></div>
+          <p>of hours at West Hub, an electric boiler made heat for less than a gas boiler. About 2,250 hours.</p>
         </div>
         <div class="stat">
-          <span class="num">47<small>–50%</small></span>
-          <div class="bar" aria-hidden="true"><span style="width:48.5%"></span></div>
-          <p>of hours, an industrial heat pump at a COP of 2 beat gas, across ERCOT's trading hubs.</p>
+          <span class="num">64<small>–70%</small></span>
+          <div class="bar" aria-hidden="true"><span style="width:67%"></span></div>
+          <p>of hours, an industrial heat pump at a COP of 2 beat gas, at West Hub and the ERCOT hub average.</p>
         </div>
         <div class="stat">
           <span class="num">7<small>%</small></span>
@@ -73,25 +73,25 @@
         </div>
       </div>
       <h3 style="margin-top:40px">Wisconsin, MISO: a utility real-time rate</h3>
-      <p class="intro" style="margin-bottom:20px">Cold-climate sites see a different picture. Prices rarely fall far enough to beat gas in a boiler, but a heat pump wins for a large share of the year, most of all in spring and fall.</p>
+      <p class="intro" style="margin-bottom:20px">Against delivered gas at $0.65 a therm, cheap hours add up even in a cold climate on a utility real-time rate, most of all in spring.</p>
       <div class="stats">
         <div class="stat">
-          <span class="num">25<small>%</small></span>
-          <div class="bar" aria-hidden="true"><span style="width:25%"></span></div>
-          <p>of hours, an industrial heat pump at a COP of 2 beat gas. About 2,200 hours, and over 40% of hours in May and June.</p>
+          <span class="num">27<small>%</small></span>
+          <div class="bar" aria-hidden="true"><span style="width:27%"></span></div>
+          <p>of hours, an electric boiler beat a gas boiler. About 2,370 hours, and over 40% of hours from April to June.</p>
+        </div>
+        <div class="stat">
+          <span class="num">78<small>%</small></span>
+          <div class="bar" aria-hidden="true"><span style="width:78%"></span></div>
+          <p>of hours, an industrial heat pump at a COP of 2 beat gas. About 6,870 hours.</p>
         </div>
         <div class="stat">
           <span class="num">35<small>%</small></span>
           <div class="bar" aria-hidden="true"><span style="width:35%"></span></div>
           <p>of hours, the real-time price was under 3¢/kWh. About 3,070 hours.</p>
         </div>
-        <div class="stat">
-          <span class="num">2<small>%</small></span>
-          <div class="bar" aria-hidden="true"><span style="width:2.3%"></span></div>
-          <p>of hours, an electric boiler beat a gas boiler. In Wisconsin, the equipment choice matters.</p>
-        </div>
       </div>
-      <p class="footnote">ERCOT real-time hub prices for 2025, each hour compared with that day's Henry Hub gas price and an 80% efficient gas boiler (break-even at about 4.3 MMBtu/MWh for an electric boiler, 8.5 for a COP 2 heat pump). Wholesale energy only, before transmission and delivery charges, which is why how you contract for power matters as much as the equipment. Source: <a href="https://ercotbids.currenttech.energy/prices.html">ERCOT Bids</a>. Wisconsin: hourly real-time (LMP-based) price under a Wisconsin utility real-time rate, July 2025 to June 2026, against the same Henry Hub and boiler assumptions.</p>
+      <p class="footnote">ERCOT real-time hub prices for 2025 against delivered gas at $0.40/therm ($4.00/MMBtu) in an 80% efficient boiler (break-even about $17/MWh for an electric boiler, $34/MWh for a COP 2 heat pump). Electricity is wholesale energy only, before transmission and delivery charges, which is why how you contract for power matters as much as the equipment. Source: <a href="https://ercotbids.currenttech.energy/prices.html">ERCOT Bids</a>. Wisconsin: hourly real-time (LMP-based) price under a Wisconsin utility real-time rate, July 2025 to June 2026, against delivered gas at $0.65/therm ($6.50/MMBtu) in an 80% efficient boiler (break-even about $28/MWh for an electric boiler, $55/MWh for a COP 2 heat pump).</p>
     </div>
   </section>
 
@@ -198,20 +198,20 @@
       </div>
       <figure>
         <svg viewBox="0 0 420 220" role="img" aria-labelledby="fig-t" style="width:100%;height:auto;display:block">
-          <title id="fig-t">Share of 2025 hours when electricity beat gas for heat: West Hub, electric boiler 21%, heat pump 47%; Hub average, electric boiler 12%, heat pump 50%.</title>
+          <title id="fig-t">Share of 2025 hours when electricity beat delivered gas for heat: West Hub, electric boiler 26%, heat pump 64%; Hub average, electric boiler 18%, heat pump 70%.</title>
           <g font-family="IBM Plex Sans, system-ui, sans-serif" font-size="13" fill="currentColor" style="color:var(--ink-2)">
             <text x="0" y="16" style="fill:var(--ink)" font-weight="600">Hours when power beat gas, 2025</text>
             <text x="0" y="56">West Hub</text>
             <rect x="110" y="44" width="300" height="14" rx="3" style="fill:var(--line)"/>
-            <rect x="110" y="44" width="141" height="14" rx="3" style="fill:var(--accent);opacity:.45"/>
-            <rect x="110" y="44" width="64" height="14" rx="3" style="fill:var(--accent)"/>
+            <rect x="110" y="44" width="192" height="14" rx="3" style="fill:var(--accent);opacity:.45"/>
+            <rect x="110" y="44" width="77" height="14" rx="3" style="fill:var(--accent)"/>
             <text x="0" y="96">Hub average</text>
             <rect x="110" y="84" width="300" height="14" rx="3" style="fill:var(--line)"/>
-            <rect x="110" y="84" width="149" height="14" rx="3" style="fill:var(--accent);opacity:.45"/>
-            <rect x="110" y="84" width="35" height="14" rx="3" style="fill:var(--accent)"/>
+            <rect x="110" y="84" width="210" height="14" rx="3" style="fill:var(--accent);opacity:.45"/>
+            <rect x="110" y="84" width="54" height="14" rx="3" style="fill:var(--accent)"/>
             <g font-family="IBM Plex Mono, monospace" font-size="12">
-              <text x="180" y="40">21%</text><text x="257" y="40">47%</text>
-              <text x="150" y="80">12%</text><text x="265" y="80">50%</text>
+              <text x="174" y="40">26%</text><text x="290" y="40">64%</text>
+              <text x="152" y="80">18%</text><text x="308" y="80">70%</text>
             </g>
             <g font-size="12">
               <rect x="0" y="140" width="12" height="12" rx="2" style="fill:var(--accent)"/><text x="18" y="150">Electric boiler</text>
@@ -220,7 +220,7 @@
             </g>
           </g>
         </svg>
-        <figcaption>Real-time ERCOT prices against Henry Hub gas in an 80% efficient boiler. Energy only.</figcaption>
+        <figcaption>Real-time ERCOT prices against delivered gas at $0.40/therm in an 80% efficient boiler. Energy only.</figcaption>
       </figure>
     </div>
   </section>
