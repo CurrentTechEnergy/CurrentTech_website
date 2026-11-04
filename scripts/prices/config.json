@@ -38,8 +38,10 @@
   "spp": {
     "nodes": [
       "SPPNORTH_HUB",
-      "SPPSOUTH_HUB"
-    ]
+      "SPPSOUTH_HUB",
+      "OKGE_OKGE"
+    ],
+    "da_probe_node": "OKGE_OKGE"
   },
   "regions": {
     "ercot_west": {
@@ -78,8 +80,7 @@
       "node": "WPS.AZ",
       "tz": "America/Chicago",
       "gas_state": "WI",
-      "gas_sector": "industrial",
-      "required": false
+      "gas_sector": "industrial"
     },
     "spp_north": {
       "file": "spp",
@@ -96,6 +97,19 @@
       "tz": "America/Chicago",
       "gas_state": "OK",
       "gas_sector": "industrial"
+    },
+    "oge": {
+      "file": "spp",
+      "market": "da",
+      "node": "OKGE_OKGE",
+      "tz": "America/Chicago",
+      "gas_state": "OK",
+      "gas_sector": "industrial",
+      "price_model": {
+        "note": "OG&E Day-Ahead Pricing (Oklahoma schedule DAP, sheet 33.03): (marginal supply cost x loss factor) + 0.5 cents/kWh. Modeled as SPP day-ahead LMP at OKGE_OKGE x 1.053 (assumed loss factor, same as the WPS fit) + $5/MWh; marginal capacity cost assumed zero in the low-price hours that matter here.",
+        "scale": 1.053,
+        "adder": 5.0
+      }
     }
   }
 }

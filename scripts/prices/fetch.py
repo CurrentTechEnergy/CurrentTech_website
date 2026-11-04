@@ -288,14 +288,38 @@ def spp_day(d):
     return out
 
 
+def spp_da_day(d):
+    """Day-ahead LMP by settlement location; one file per operating day, hour ending."""
+    path = f"/{d:%Y}/{d:%m}/By_Day/DA-LMP-SL-{d:%Y%m%d}0100.csv"
+    raw = get("https://portal.spp.org/file-browser-api/download/da-lmp-by-settlement-location?path=" + path)
+    if not raw:
+        return []
+    keep = set(CONFIG["spp"]["nodes"])
+    out = []
+    rd = csv.reader(io.StringIO(raw.decode("utf-8", "replace")))
+    hdr = [h.strip().upper().replace(" ", "").replace("_", "") for h in next(rd)]  # header style varies by day
+    gi, ni, pi = hdr.index("GMTINTERVALEND"), hdr.index("SETTLEMENTLOCATION"), hdr.index("LMP")
+    for r in rd:
+        if len(r) > pi and r[ni] in keep:
+            ts = r[gi].strip()
+            end = dt.datetime.strptime(ts, "%m/%d/%Y %H:%M:%S" if ts.count(":") == 2 else "%m/%d/%Y %H:%M").replace(tzinfo=UTC)
+            out.append((end - dt.timedelta(hours=1), "da", r[ni], float(r[pi])))
+    return out
+
+
 def fetch_spp(days, workers):
     rows = load("spp")
     have = days_present(rows, "rt", CONFIG["spp"]["nodes"][0], CENTRAL)
     need = [d for d in wanted_days(days) if d not in have]
-    log(f"spp: fetching {len(need)} day files")
+    # Day-ahead files are posted the day before, so include tomorrow.
+    have_da = days_present(rows, "da", CONFIG["spp"]["da_probe_node"], CENTRAL)
+    need_da = [d for d in wanted_days(days, lag=-1) if d not in have_da]
+    log(f"spp: fetching {len(need)} real-time and {len(need_da)} day-ahead day files")
     pts = []
     with ThreadPoolExecutor(workers) as ex:
         for res in ex.map(safe(spp_day), need):
+            pts.extend(res)
+        for res in ex.map(safe(spp_da_day), need_da):
             pts.extend(res)
     rows.update(hourly(pts))
     save("spp", rows)

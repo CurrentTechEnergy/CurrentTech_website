@@ -1,5 +1,5 @@
 {
- "built": "2026-11-04T03:00Z",
+ "built": "2026-11-04T03:05Z",
  "assumptions": {
   "window_days": 365,
   "gas_boiler_efficiency": 0.8,
@@ -11,6 +11,8 @@
  "site": {
   "ercot_period": "Nov 3, 2025 to Nov 2, 2026",
   "wisconsin_period": "Nov 4, 2025 to Nov 3, 2026",
+  "miso_period": "Nov 3, 2025 to Nov 2, 2026",
+  "oge_period": "Nov 5, 2025 to Nov 4, 2026",
   "spp_period": "Oct 30, 2025 to Oct 29, 2026",
   "ercot_hp_low": "64",
   "ercot_hp_suffix": "\u201365%",
@@ -167,6 +169,31 @@
    "cheap_pct": 73.49,
    "spring_eb_pct": 44.23,
    "mean_price": 25.71
+  },
+  "oge": {
+   "node": "OKGE_OKGE",
+   "market": "da",
+   "window_start": "2025-11-05",
+   "window_end": "2026-11-04",
+   "hours": 8760,
+   "gas_state": "OK",
+   "gas_sector": "industrial",
+   "gas_usd_mcf": 4.068,
+   "gas_usd_mmbtu": 3.923,
+   "gas_usd_therm": 0.3923,
+   "gas_months_estimated": 3,
+   "breakeven_eb": 16.73,
+   "breakeven_hp": 33.46,
+   "eb_hours": 1437,
+   "eb_pct": 16.4,
+   "hp_hours": 4562,
+   "hp_pct": 52.08,
+   "neg_hours": 442,
+   "neg_pct": 5.05,
+   "cheap_hours": 3647,
+   "cheap_pct": 41.63,
+   "spring_eb_pct": 21.38,
+   "mean_price": 38.46
   }
  }
 }
