@@ -94,10 +94,10 @@ h3 { font-size: 20px; line-height: 1.2; margin: 0 0 8px; }
 .stat .tag { font: 500 11px/1.3 var(--font-data); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
 .bar { height: 6px; border-radius: 3px; background: var(--line); overflow: hidden; }
 .bar span { display: block; height: 100%; background: var(--accent); }
-.footnote { font-size: 13px; color: var(--muted); max-width: 90ch; margin: 18px 0 0; }
+.footnote { font-size: 13px; color: var(--muted); max-width: none; margin: 18px 0 0; }
 h3.sub { margin-top: 40px; }
 .intro.tight { margin-bottom: 20px; }
-.intro.after { margin: 28px 0 0; }
+.intro.after { margin: 28px 0 0; max-width: 92ch; }
 .intro.after + .ctas { margin-top: 24px; }
 
 /* cards */
