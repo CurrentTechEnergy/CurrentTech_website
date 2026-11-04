@@ -85,6 +85,7 @@ h3 { font-size: 20px; line-height: 1.2; margin: 0 0 8px; }
 h3.sub { margin-top: 40px; }
 .intro.tight { margin-bottom: 20px; }
 .intro.after { margin: 28px 0 0; }
+.intro.after + .ctas { margin-top: 24px; }
 
 /* cards */
 .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
