@@ -44,8 +44,9 @@
   <div class="wrap">
     <a class="brand" href="../"><img src="../favicon.svg" alt="" width="28" height="28"><span>CurrentTech Energy</span></a>
     <nav class="nav" aria-label="Main">
-      <a href="../#services" class="hide-sm">Services</a>
-      <a href="../#approach" class="hide-sm">Approach</a>
+      <a href="../" class="home-link">Home</a>
+      <a href="../markets/" class="hide-sm">Market<span class="hide-xs"> analyses</span></a>
+      <a href="../how-we-work/" class="hide-sm">How we work</a>
       <a href="../about/">About</a>
       <a class="btn small" href="./" aria-current="page">Contact</a>
     </nav>
@@ -92,41 +93,15 @@
 
 <footer>
   <div class="wrap">
-    <span>© 2026 CurrentTech Energy</span>
+    <div class="foot-brand"><img src="../currenttech-logo.png" alt="CurrentTech Energy logo" width="128" height="128" loading="lazy"><span>© 2026 CurrentTech Energy</span></div>
     <nav aria-label="Footer">
-      <a href="../#services">Services</a>
+      <a href="../markets/">Market analyses</a>
+      <a href="../how-we-work/">How we work</a>
       <a href="https://ercotbids.currenttech.energy/">ERCOT Bids</a>
       <a href="../about/">About</a>
-      <a href="./" aria-current="page">Contact</a>
+      <a href="../contact/">Contact</a>
     </nav>
   </div>
 </footer>
-<script>
-// Formspree form ID (the part after /f/). Shared with ERCOT Bids; the subject line says which site a message came from.
-const FORMSPREE_ID = "xjygzead";
-const form = document.getElementById("contact-form");
-const send = document.getElementById("c-send");
-const status = document.getElementById("c-status");
-const qp = new URLSearchParams(location.search);
-if (qp.get("topic")) { const o = [...form.topic.options].findIndex(x => x.value === qp.get("topic")); if (o >= 0) form.topic.selectedIndex = o; }
-function say(t, k) { status.textContent = t; status.className = "form-msg" + (k ? " " + k : ""); }
-form.action = "https://formspree.io/f/" + FORMSPREE_ID;
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const email = form.email.value.trim(), msg = form.message.value.trim();
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { say("Please enter an email address so Blair can reply.", "err"); form.email.focus(); return; }
-  if (!msg) { say("Please write a message.", "err"); form.message.focus(); return; }
-  send.disabled = true; say("Sending…");
-  const data = new FormData(form);
-  data.append("_subject", "currenttech.energy: " + form.topic.options[form.topic.selectedIndex].text);
-  try {
-    const r = await fetch(form.action, { method: "POST", body: data, headers: { Accept: "application/json" } });
-    if (!r.ok) { const b = await r.json().catch(() => ({})); throw new Error((b.errors || []).map(x => x.message).join(" ") || ""); }
-    form.reset(); say("Thanks, your message was sent. Blair will reply by email.");
-  } catch (err) {
-    say((err.message ? "That didn't go through: " + err.message + " " : "That didn't go through. ") + "Please try again in a moment.", "err");
-  } finally { send.disabled = false; }
-});
-</script>
 </body>
 </html>

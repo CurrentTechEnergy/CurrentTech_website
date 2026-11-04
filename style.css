@@ -46,7 +46,7 @@ img { max-width: 100%; }
 .nav { display: flex; align-items: center; gap: 4px; font-size: 14px; }
 .nav a { color: var(--ink-2); text-decoration: none; padding: 6px 10px; border-radius: 999px; }
 .nav a:hover { color: var(--ink); background: var(--accent-soft); }
-.nav a[aria-current="page"] { color: var(--ink); }
+.nav a[aria-current="page"] { color: var(--ink); background: var(--accent-soft); }
 .nav a.btn, .nav a.btn:hover { color: var(--accent-ink); background: var(--accent); border-radius: 8px; padding: 8px 14px; margin-left: 4px; }
 .btn { display: inline-flex; align-items: center; gap: 8px; font: 500 15px/1 var(--font-ui); text-decoration: none; padding: 12px 18px; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent); color: var(--accent-ink); white-space: nowrap; }
 .btn:hover { filter: brightness(1.08); }
@@ -54,7 +54,19 @@ img { max-width: 100%; }
 .btn.ghost:hover { border-color: var(--muted); filter: none; }
 .btn.small { padding: 8px 14px; font-size: 14px; }
 @media (max-width: 760px) {
-  .nav a.hide-sm { display: none; }
+  /* Two rows on phones: brand, then every link, so Markets and How we work stay reachable. */
+  .top .wrap { flex-wrap: wrap; row-gap: 0; padding-block: 10px 8px; }
+  .nav { width: 100%; margin-left: -10px; }
+  .nav a.btn { margin-left: auto; }
+  .nav a { white-space: nowrap; }
+  .nav a.home-link { display: none; } /* the logo is the home link on phones */
+}
+@media (max-width: 400px) {
+  .nav a { padding: 6px 7px; font-size: 13px; }
+  .nav a.btn { padding: 7px 11px; }
+}
+@media (max-width: 370px) {
+  .nav .hide-xs { display: none; }
 }
 
 /* sections */
@@ -79,6 +91,7 @@ h3 { font-size: 20px; line-height: 1.2; margin: 0 0 8px; }
 .stat .num { font: 500 clamp(36px, 5vw, 48px)/1 var(--font-data); color: var(--ink); }
 .stat .num small { font-size: 0.5em; color: var(--muted); }
 .stat p { margin: 0; color: var(--ink-2); font-size: 15px; }
+.stat .tag { font: 500 11px/1.3 var(--font-data); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
 .bar { height: 6px; border-radius: 3px; background: var(--line); overflow: hidden; }
 .bar span { display: block; height: 100%; background: var(--accent); }
 .footnote { font-size: 13px; color: var(--muted); max-width: 90ch; margin: 18px 0 0; }
@@ -121,7 +134,9 @@ h3.sub { margin-top: 40px; }
 footer { padding-block: 32px 48px; color: var(--muted); font-size: 14px; }
 footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; }
 footer a { color: var(--ink-2); }
-footer nav { display: flex; flex-wrap: wrap; gap: 16px; }
+footer nav { display: flex; flex-wrap: wrap; gap: 16px; align-self: flex-end; }
+.foot-brand { display: flex; flex-direction: column; gap: 12px; }
+.foot-brand img { width: 128px; height: 128px; border-radius: 14px; }
 
 @media (max-width: 900px) {
   .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }

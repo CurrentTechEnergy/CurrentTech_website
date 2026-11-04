@@ -1,0 +1,59 @@
+name: Update market prices
+
+# Daily: pull hourly ERCOT, MISO and SPP prices and EIA delivered gas prices,
+# recompute the home page's "hours cheaper than gas" stats, and commit.
+on:
+  schedule:
+    - cron: "30 13 * * *"   # 7:30 am Central (8:30 in summer), after MISO posts final prices
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "Days of history to make sure are cached"
+        default: "400"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-prices
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install openpyxl==3.1.5 xlrd==2.0.1
+
+      - name: Fetch prices
+        id: fetch
+        continue-on-error: true
+        run: python scripts/prices/fetch.py --days "${{ inputs.days || '400' }}"
+
+      - name: Recompute stats and update the site
+        run: python scripts/prices/stats.py
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data '*.html'
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Update market prices and stats ($(date -u +%F))"
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
+
+      - name: Fail if a source could not be fetched
+        if: steps.fetch.outcome == 'failure'
+        run: |
+          echo "::error::One or more price sources failed. Stats were recomputed from the data that was cached. See the Fetch prices step."
+          exit 1
