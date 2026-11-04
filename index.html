@@ -29,8 +29,8 @@
   <div class="wrap">
     <a class="brand" href="./"><img src="favicon.svg" alt="" width="28" height="28"><span>CurrentTech Energy</span></a>
     <nav class="nav" aria-label="Main">
-      <a href="#services" class="hide-sm">Services</a>
-      <a href="#approach" class="hide-sm">Approach</a>
+      <a href="markets/" class="hide-sm">Markets</a>
+      <a href="how-we-work/" class="hide-sm">How we work</a>
       <a href="about/">About</a>
       <a class="btn small" href="contact/">Contact</a>
     </nav>
@@ -41,7 +41,7 @@
   <section class="hero">
     <div class="wrap">
       <h1>Heat with power when it's <em>cheaper than gas.</em></h1>
-      <p class="lede">As grids add wind and solar, wholesale power is cheap enough to make heat for less than gas for thousands of hours a year. CurrentTech helps industrial sites, campuses and hospitals capture those hours: the electric heat, the power contract behind it, and the market analysis that ties them together.</p>
+      <p class="lede">As grids add wind and solar, wholesale power is cheap enough to make heat for less than the cost of gas for thousands of hours a year. CurrentTech Energy helps industrial sites, campuses, and hospitals capture those hours: the electric heat, the power contract behind it, and the market analysis that ties them together.</p>
       <div class="ctas">
         <a class="btn" href="contact/?topic=screening">Get a free site screening</a>
         <a class="btn ghost" href="#numbers">See the numbers</a>
@@ -50,108 +50,32 @@
   </section>
 
   <section id="numbers">
-    <!-- Values in data-stat elements are rewritten daily by scripts/prices/stats.py (see .github/workflows/update-prices.yml). Edit the words around them freely, but keep the data-stat attributes. -->
+    <!-- Values in data-stat elements are rewritten daily by scripts/prices/stats.py. Keep the data-stat attributes. -->
     <div class="wrap">
-      <p class="eyebrow">A worked example: ERCOT, the last 12 months</p>
+      <p class="eyebrow">The last 12 months, updated daily</p>
       <h2>Cheap hours aren't rare. They're a resource.</h2>
-      <p class="intro">Texas is the clearest case, and we track it daily: every hour of the last 12 months, real-time ERCOT prices against what it costs to make the same heat with delivered gas, in an electric boiler or a heat pump at COP 2 (two units of heat per unit of electricity). These are wholesale energy prices, before delivery charges. Getting them onto your bill takes a real-time supply contract and a tariff whose $/kW charges follow coincident peaks you can stay off. That is most of our work. The same pattern runs through SPP and MISO, where wind regularly pushes prices low or below zero.</p>
+      <p class="intro">Share of hours an electric boiler made heat for less than an 80% efficient gas boiler, at real-time wholesale prices against delivered gas.</p>
       <div class="stats">
         <div class="stat">
           <span class="num"><span data-stat="ercot_west.eb_pct">29</span><small>%</small></span>
           <div class="bar" aria-hidden="true"><span data-stat-width="ercot_west.eb_pct" style="width:29%"></span></div>
-          <p>of hours at West Hub, an electric boiler made heat for less than a gas boiler. About <span data-stat="ercot_west.eb_hours">2,570</span> hours.</p>
+          <p>ERCOT West Hub, against Texas gas at $<span data-stat="ercot_west.gas_usd_therm">0.36</span> a therm. About <span data-stat="ercot_west.eb_hours">2,570</span> hours.</p>
         </div>
-        <div class="stat">
-          <span class="num"><span data-stat="site.ercot_hp_low">64</span><small data-stat="site.ercot_hp_suffix">–65%</small></span>
-          <div class="bar" aria-hidden="true"><span data-stat-width="site.ercot_hp_mid_pct" style="width:64%"></span></div>
-          <p>of hours, an industrial heat pump at a COP of 2 beat gas, at West Hub and the ERCOT hub average.</p>
-        </div>
-        <div class="stat">
-          <span class="num"><span data-stat="ercot_west.neg_pct">12</span><small>%</small></span>
-          <div class="bar" aria-hidden="true"><span data-stat-width="ercot_west.neg_pct" style="width:12%"></span></div>
-          <p>of hours at West Hub, the price was below zero. Generators were paying to keep running.</p>
-        </div>
-      </div>
-      <h3 class="sub">MISO: real-time price in Wisconsin</h3>
-      <p class="intro tight">Even in a cold climate, against delivered gas at $<span data-stat="wisconsin_rt_lmp.gas_usd_therm">0.67</span> a therm, MISO's real-time price at the Wisconsin Public Service zone beats gas for much of the year, most of all in spring.</p>
-      <div class="stats">
         <div class="stat">
           <span class="num"><span data-stat="wisconsin_rt_lmp.eb_pct">47</span><small>%</small></span>
           <div class="bar" aria-hidden="true"><span data-stat-width="wisconsin_rt_lmp.eb_pct" style="width:47%"></span></div>
-          <p>of hours, an electric boiler beat a gas boiler. About <span data-stat="wisconsin_rt_lmp.eb_hours">4,160</span> hours, and <span data-stat="wisconsin_rt_lmp.spring_eb_pct">64</span>% of hours from April to June.</p>
-        </div>
-        <div class="stat">
-          <span class="num"><span data-stat="wisconsin_rt_lmp.hp_pct">88</span><small>%</small></span>
-          <div class="bar" aria-hidden="true"><span data-stat-width="wisconsin_rt_lmp.hp_pct" style="width:88%"></span></div>
-          <p>of hours, an industrial heat pump at a COP of 2 beat gas.</p>
-        </div>
-        <div class="stat">
-          <span class="num"><span data-stat="wisconsin_rt_lmp.cheap_pct">53</span><small>%</small></span>
-          <div class="bar" aria-hidden="true"><span data-stat-width="wisconsin_rt_lmp.cheap_pct" style="width:53%"></span></div>
-          <p>of hours, the real-time price was under 3¢/kWh. About <span data-stat="wisconsin_rt_lmp.cheap_hours">4,660</span> hours.</p>
-        </div>
-      </div>
-      <h3 class="sub">SPP: real-time hub prices</h3>
-      <p class="intro tight">Wind in Oklahoma, Kansas and Nebraska regularly pushes SPP prices below zero, often for days at a time.</p>
-      <div class="stats">
-        <div class="stat">
-          <span class="num"><span data-stat="spp_south.eb_pct">37</span><small>%</small></span>
-          <div class="bar" aria-hidden="true"><span data-stat-width="spp_south.eb_pct" style="width:37%"></span></div>
-          <p>of hours at SPP South Hub, an electric boiler beat a gas boiler, against Oklahoma gas at $<span data-stat="spp_south.gas_usd_therm">0.39</span> a therm.</p>
+          <p>MISO in Wisconsin, against Wisconsin gas at $<span data-stat="wisconsin_rt_lmp.gas_usd_therm">0.67</span> a therm. About <span data-stat="wisconsin_rt_lmp.eb_hours">4,160</span> hours.</p>
         </div>
         <div class="stat">
           <span class="num"><span data-stat="spp_north.eb_pct">56</span><small>%</small></span>
           <div class="bar" aria-hidden="true"><span data-stat-width="spp_north.eb_pct" style="width:56%"></span></div>
-          <p>of hours at SPP North Hub, against Nebraska gas at $<span data-stat="spp_north.gas_usd_therm">0.55</span> a therm. A heat pump beat gas in <span data-stat="spp_north.hp_pct">86</span>% of hours.</p>
-        </div>
-        <div class="stat">
-          <span class="num"><span data-stat="spp_south.neg_pct">17</span><small>%</small></span>
-          <div class="bar" aria-hidden="true"><span data-stat-width="spp_south.neg_pct" style="width:17%"></span></div>
-          <p>of hours at SPP South Hub, the real-time price was below zero. About <span data-stat="spp_south.neg_hours">1,460</span> hours.</p>
+          <p>SPP North Hub, against Nebraska gas at $<span data-stat="spp_north.gas_usd_therm">0.55</span> a therm. About <span data-stat="spp_north.eb_hours">4,900</span> hours.</p>
         </div>
       </div>
-      <p class="eyebrow" style="margin-top:64px">From the market to the bill</p>
-      <h3 class="sub" style="margin-top:8px">Utility real-time rates</h3>
-      <p class="intro tight">Many utilities offer an hourly rate tied to the ISO's prices. Most follow the day-ahead market, not real-time, and add losses and a margin, so fewer hours beat gas than the wholesale numbers above. The right rate, or a contract that passes through real-time prices, is worth as much as the equipment.</p>
-      <h3 class="sub">Wisconsin Public Service (MISO): real-time market pricing</h3>
-      <div class="stats">
-        <div class="stat">
-          <span class="num"><span data-stat="wisconsin.eb_pct">30</span><small>%</small></span>
-          <div class="bar" aria-hidden="true"><span data-stat-width="wisconsin.eb_pct" style="width:30%"></span></div>
-          <p>of hours, an electric boiler beat a gas boiler. About <span data-stat="wisconsin.eb_hours">2,640</span> hours, and <span data-stat="wisconsin.spring_eb_pct">50</span>% of hours from April to June.</p>
-        </div>
-        <div class="stat">
-          <span class="num"><span data-stat="wisconsin.hp_pct">81</span><small>%</small></span>
-          <div class="bar" aria-hidden="true"><span data-stat-width="wisconsin.hp_pct" style="width:81%"></span></div>
-          <p>of hours, an industrial heat pump at a COP of 2 beat gas. About <span data-stat="wisconsin.hp_hours">7,130</span> hours.</p>
-        </div>
-        <div class="stat">
-          <span class="num"><span data-stat="wisconsin.cheap_pct">37</span><small>%</small></span>
-          <div class="bar" aria-hidden="true"><span data-stat-width="wisconsin.cheap_pct" style="width:37%"></span></div>
-          <p>of hours, the rate was under 3¢/kWh. About <span data-stat="wisconsin.cheap_hours">3,200</span> hours.</p>
-        </div>
+      <p class="intro after">Wholesale energy prices, before delivery charges. Getting them onto your bill takes the right utility rate or supply contract, and that is most of our work.</p>
+      <div class="ctas">
+        <a class="btn ghost" href="markets/">See the market analyses</a>
       </div>
-      <p class="intro after">On MISO's raw real-time price at the same zone, an electric boiler beat gas in <span data-stat="wisconsin_rt_lmp.eb_pct">47</span>% of hours, not <span data-stat="wisconsin.eb_pct">30</span>%. The rate follows the day-ahead market, which misses many of the windy hours when real-time prices fall, and adds losses and a price floor.</p>
-      <h3 class="sub">OG&amp;E (SPP): Day-Ahead Pricing</h3>
-      <p class="intro tight">OG&amp;E prices each hour from SPP's day-ahead price for its zone, plus losses and 0.5¢/kWh, against Oklahoma gas at $<span data-stat="oge.gas_usd_therm">0.39</span> a therm. Only load above your baseline pays the hourly price, so a new electric boiler runs entirely on it.</p>
-      <div class="stats">
-        <div class="stat">
-          <span class="num"><span data-stat="oge.eb_pct">16</span><small>%</small></span>
-          <div class="bar" aria-hidden="true"><span data-stat-width="oge.eb_pct" style="width:16%"></span></div>
-          <p>of hours, an electric boiler beat a gas boiler. About <span data-stat="oge.eb_hours">1,440</span> hours.</p>
-        </div>
-        <div class="stat">
-          <span class="num"><span data-stat="oge.hp_pct">52</span><small>%</small></span>
-          <div class="bar" aria-hidden="true"><span data-stat-width="oge.hp_pct" style="width:52%"></span></div>
-          <p>of hours, an industrial heat pump at a COP of 2 beat gas. About <span data-stat="oge.hp_hours">4,560</span> hours.</p>
-        </div>
-        <div class="stat">
-          <span class="num"><span data-stat="oge.cheap_pct">42</span><small>%</small></span>
-          <div class="bar" aria-hidden="true"><span data-stat-width="oge.cheap_pct" style="width:42%"></span></div>
-          <p>of hours, the rate was under 3¢/kWh. About <span data-stat="oge.cheap_hours">3,650</span> hours.</p>
-        </div>
-      </div>
-      <p class="footnote">ERCOT real-time hub prices, <span data-stat="site.ercot_period">Nov 3, 2025 to Nov 2, 2026</span>, against delivered gas at $<span data-stat="ercot_west.gas_usd_therm">0.36</span>/therm ($<span data-stat="ercot_west.gas_usd_mmbtu">3.63</span>/MMBtu) in an 80% efficient boiler (break-even about $<span data-stat="ercot_west.breakeven_eb">15</span>/MWh for an electric boiler, $<span data-stat="ercot_west.breakeven_hp">31</span>/MWh for a COP 2 heat pump). Electricity is wholesale energy only, before transmission and delivery charges, which is why how you contract for power matters as much as the equipment. Source: <a href="https://ercotbids.currenttech.energy/prices.html">ERCOT Bids</a>. MISO: real-time LMP at the Wisconsin Public Service zone (WPS.AZ), <span data-stat="site.miso_period">Nov 3, 2025 to Nov 2, 2026</span>, same gas. Wisconsin Public Service: hourly price under its real-time market pricing rate, which follows MISO day-ahead LMPs, <span data-stat="site.wisconsin_period">Nov 4, 2025 to Nov 3, 2026</span>, against delivered gas at $<span data-stat="wisconsin.gas_usd_therm">0.67</span>/therm ($<span data-stat="wisconsin.gas_usd_mmbtu">6.66</span>/MMBtu) in an 80% efficient boiler (break-even about $<span data-stat="wisconsin.breakeven_eb">28</span>/MWh for an electric boiler, $<span data-stat="wisconsin.breakeven_hp">57</span>/MWh for a COP 2 heat pump). SPP: real-time hub prices, <span data-stat="site.spp_period">Oct 30, 2025 to Oct 29, 2026</span>, against delivered gas in an 80% efficient boiler (break-even about $<span data-stat="spp_south.breakeven_eb">17</span>/MWh at South Hub, $<span data-stat="spp_north.breakeven_eb">24</span>/MWh at North Hub, for an electric boiler). OG&amp;E: Day-Ahead Pricing (Oklahoma schedule DAP) modeled as SPP day-ahead LMP for the OG&amp;E zone, plus 5.3% losses and 0.5¢/kWh, <span data-stat="site.oge_period">Nov 5, 2025 to Nov 4, 2026</span>, against Oklahoma gas (break-even about $<span data-stat="oge.breakeven_eb">17</span>/MWh). OG&amp;E's hourly prices are confidential to its customers, so these are our estimate from public SPP prices. Delivered gas is EIA's average industrial price for each state over the same months. Updated daily; last update <span data-stat="site.updated">Nov 4, 2026</span>.</p>
     </div>
   </section>
 
@@ -182,71 +106,9 @@
         </article>
       </div>
       <p class="intro after">Sites in wind- and solar-heavy regions, such as ERCOT, SPP and MISO, usually have the most cheap hours. But send us every site. The screening ranks them.</p>
-    </div>
-  </section>
-
-  <section id="services">
-    <div class="wrap">
-      <p class="eyebrow">What we do</p>
-      <h2>From the market to the steam header.</h2>
-      <p class="intro">Most electrification studies stop at equipment. The economics live in the power contract and in knowing which hours to run. We cover the equipment, the contract and the market analysis behind both.</p>
-      <div class="grid">
-        <article class="card">
-          <p class="tag">Electrification</p>
-          <h3>Flexible electric heat</h3>
-          <p>Steam and hot water that runs on electricity when power is cheap and on gas when it isn't, sized and dispatched from the price history your sites actually face.</p>
-          <ul>
-            <li>Electric and dual-fuel boilers, steam-generating heat pumps, electric-thermal storage</li>
-            <li>Sizing against hour-by-hour price history, not averages</li>
-            <li>Dispatch logic: when to switch, and for how long</li>
-          </ul>
-        </article>
-        <article class="card">
-          <p class="tag">Contracting</p>
-          <h3>Large load power contracting</h3>
-          <p>A flexible load is only worth what its contract lets it capture. We structure supply so the cheap hours actually reach your bill.</p>
-          <ul>
-            <li>Real-time pricing tariffs and real-time index supply</li>
-            <li>Regulated utility tariffs, riders, and finding ultra-low off-peak rates</li>
-            <li>Avoiding capacity, transmission and demand charges by staying off the peaks</li>
-            <li>Interconnection and large load process support</li>
-            <li>Negotiating special contracts with suppliers and utilities</li>
-          </ul>
-        </article>
-        <article class="card">
-          <p class="tag">Procurement</p>
-          <h3>PPAs and renewable supply</h3>
-          <p>Virtual and physical PPAs, on-site generation and renewable attributes that line up with your scope 2 goals and your load shape.</p>
-          <ul>
-            <li>VPPA strategy, RFPs, term sheet and settlement analysis</li>
-            <li>Basis and shape risk across hubs and nodes</li>
-            <li>Matching a flexible load to a PPA's hourly shape</li>
-          </ul>
-        </article>
-        <article class="card">
-          <p class="tag">Analysis</p>
-          <h3>Wholesale market analysis</h3>
-          <p>How prices form, when generators turn off, and what that means for a site's cost. The same work behind ERCOT Bids, applied to your market and your load.</p>
-          <ul>
-            <li>Price duration and gas parity across ERCOT, SPP, MISO, or any hub or node</li>
-            <li>Bid stack and generator behavior at low and negative prices</li>
-            <li>Decarbonization screening across multi-site portfolios</li>
-          </ul>
-        </article>
+      <div class="ctas">
+        <a class="btn ghost" href="how-we-work/">How we work</a>
       </div>
-    </div>
-  </section>
-
-  <section id="approach">
-    <div class="wrap">
-      <p class="eyebrow">How a project runs</p>
-      <h2>A defined process for a complicated decision.</h2>
-      <ol class="steps">
-        <li><h3>Screen</h3><p>A free first pass from your utility bills. Within about a week you get your sites ranked by potential, with the technology that fits each one: electric boiler, heat pump or thermal storage.</p></li>
-        <li><h3>Design</h3><p>Pick the technology and size it against real price history, with gas kept as the backup.</p></li>
-        <li><h3>Contract</h3><p>Choose the supply structure, tariff and any PPA so the savings show up on the bill.</p></li>
-        <li><h3>Operate</h3><p>We set the switching rules with your controls team, from a simple price threshold to day-ahead schedules, then run or support dispatch and track savings against the plan. Your operators keep the plant, and the gas boilers are always there.</p></li>
-      </ol>
     </div>
   </section>
 
@@ -268,74 +130,6 @@
           <p>Electric steam generators or hot water heat pumps, depending on the site. Gas stays in place, so resilience is unchanged.</p>
         </article>
       </div>
-    </div>
-  </section>
-
-  <section id="utilities">
-    <div class="wrap">
-      <p class="eyebrow">For utilities and renewable owners</p>
-      <h2>A floor under the price of renewable power.</h2>
-      <p class="intro">More hours clear at $0/MWh or below every year, and someone holds the gap between zero and that $55 PPA on your books. Flexible industrial heat can be the floor: a megawatt-hour that displaces gas from a boiler is worth about $<span data-stat="ercot_west.breakeven_eb">15</span> in every hour it runs.</p>
-      <div class="grid">
-        <article class="card">
-          <p class="tag">Approach 1</p>
-          <h3>Heat as a service, sold as a hedge</h3>
-          <p>A transmission-connected industrial site buys electric heat at $15/MWh. That contract guarantees $15 whenever the market clears below it, a floor you can sell to offtakers or hold against your own PPAs.</p>
-        </article>
-        <article class="card">
-          <p class="tag">Approach 2</p>
-          <h3>A non-firm, dispatchable tariff</h3>
-          <p>Cheap, interruptible power in the hours you have surplus energy and headroom on the wires. Buy at wholesale, sell to flexible load at a floor, and put the margin toward the next renewable contract.</p>
-        </article>
-      </div>
-      <p class="intro after">Either way: more kilowatt-hours sold, revenue from power that would otherwise be curtailed, and progress on clean heat and gas decarbonization targets. We are looking for pilots.</p>
-      <div class="ctas">
-        <a class="btn" href="contact/?topic=utilities">Talk to us about a pilot</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="ercot-bids">
-    <div class="wrap feature">
-      <div>
-        <p class="eyebrow">Free tool</p>
-        <h2>ERCOT Bids: our market work, in public.</h2>
-        <p class="intro">An explorer for every ERCOT operating day, built on ERCOT's own disclosures. Prices hour by hour, how wind, solar and batteries ran, and which thermal units turned off when prices fell.</p>
-        <ul>
-          <li>Updated twice a day from ERCOT's public reports</li>
-          <li>Every thermal unit's hours, output and turn-offs</li>
-          <li>Price history by hub, back to 2019</li>
-        </ul>
-        <div class="ctas">
-          <a class="btn" href="https://ercotbids.currenttech.energy/">Open ERCOT Bids</a>
-        </div>
-      </div>
-      <figure>
-        <svg viewBox="0 0 420 220" role="img" aria-labelledby="fig-t" style="width:100%;height:auto;display:block">
-          <title id="fig-t">Share of hours in the last 12 months when electricity beat delivered gas for heat, at ERCOT West Hub and the ERCOT hub average, for an electric boiler and a heat pump at COP 2.</title>
-          <g font-family="IBM Plex Sans, system-ui, sans-serif" font-size="13" fill="currentColor" style="color:var(--ink-2)">
-            <text x="0" y="16" style="fill:var(--ink)" font-weight="600">Hours when power beat gas, last 12 months</text>
-            <text x="0" y="56">West Hub</text>
-            <rect x="110" y="44" width="300" height="14" rx="3" style="fill:var(--line)"/>
-            <rect data-stat-svgw="ercot_west.hp_pct" x="110" y="44" width="191" height="14" rx="3" style="fill:var(--accent);opacity:.45"/>
-            <rect data-stat-svgw="ercot_west.eb_pct" x="110" y="44" width="88" height="14" rx="3" style="fill:var(--accent)"/>
-            <text x="0" y="96">Hub average</text>
-            <rect x="110" y="84" width="300" height="14" rx="3" style="fill:var(--line)"/>
-            <rect data-stat-svgw="ercot_hubavg.hp_pct" x="110" y="84" width="194" height="14" rx="3" style="fill:var(--accent);opacity:.45"/>
-            <rect data-stat-svgw="ercot_hubavg.eb_pct" x="110" y="84" width="52" height="14" rx="3" style="fill:var(--accent)"/>
-            <g font-family="IBM Plex Mono, monospace" font-size="12">
-              <text data-stat-svgx="ercot_west.eb_pct" x="186" y="40"><tspan data-stat="ercot_west.eb_pct">29</tspan>%</text><text data-stat-svgx="ercot_west.hp_pct" x="289" y="40"><tspan data-stat="ercot_west.hp_pct">64</tspan>%</text>
-              <text data-stat-svgx="ercot_hubavg.eb_pct" x="150" y="80"><tspan data-stat="ercot_hubavg.eb_pct">17</tspan>%</text><text data-stat-svgx="ercot_hubavg.hp_pct" x="292" y="80"><tspan data-stat="ercot_hubavg.hp_pct">65</tspan>%</text>
-            </g>
-            <g font-size="12">
-              <rect x="0" y="140" width="12" height="12" rx="2" style="fill:var(--accent)"/><text x="18" y="150">Electric boiler</text>
-              <rect x="130" y="140" width="12" height="12" rx="2" style="fill:var(--accent);opacity:.45"/><text x="148" y="150">Heat pump, COP 2</text>
-              <text x="0" y="190" style="fill:var(--muted)">Bar width is share of the year's 8,760 hours.</text>
-            </g>
-          </g>
-        </svg>
-        <figcaption>Real-time ERCOT prices against delivered gas at $<span data-stat="ercot_west.gas_usd_therm">0.36</span>/therm in an 80% efficient boiler. Energy only.</figcaption>
-      </figure>
     </div>
   </section>
 
@@ -376,7 +170,8 @@
   <div class="wrap">
     <span>© 2026 CurrentTech Energy</span>
     <nav aria-label="Footer">
-      <a href="#services">Services</a>
+      <a href="markets/">Markets</a>
+      <a href="how-we-work/">How we work</a>
       <a href="https://ercotbids.currenttech.energy/">ERCOT Bids</a>
       <a href="about/">About</a>
       <a href="contact/">Contact</a>

@@ -4,7 +4,9 @@ The static site for [currenttech.energy](https://currenttech.energy/). Plain HTM
 
 | File | Page |
 |---|---|
-| `index.html` | Home: the gas-parity numbers, services, process, who we work with, ERCOT Bids, about teaser |
+| `index.html` | Home: hero, three headline gas-parity numbers, keep your gas boilers, who we work with, about teaser |
+| `markets/index.html` | Market analyses: ERCOT, MISO and SPP wholesale rows, utility rates (WPS, OG&E), ERCOT Bids |
+| `how-we-work/index.html` | Services, how a project runs, utilities and renewable owners |
 | `about/index.html` | About Blair (keeps the old WordPress `/about/` URL) |
 | `404.html` | Not found |
 | `style.css` | All styles, light and dark |
