@@ -59,6 +59,7 @@ img { max-width: 100%; }
   .nav { width: 100%; margin-left: -10px; }
   .nav a.btn { margin-left: auto; }
   .nav a { white-space: nowrap; }
+  .nav a.home-link { display: none; } /* the logo is the home link on phones */
 }
 @media (max-width: 400px) {
   .nav a { padding: 6px 7px; font-size: 13px; }
