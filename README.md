@@ -26,4 +26,7 @@ Then open http://localhost:8000.
 
 ## Updating the numbers
 
-The 2025 figures on the home page come from `site/data/prices_years.json.gz` in the ERCOT Bids repository: real-time hub prices against Henry Hub gas, as an implied heat rate. Break-even is 3.412 / 0.80 ≈ 4.27 MMBtu/MWh for an electric boiler against an 80% efficient gas boiler, and twice that for a heat pump at COP 2.
+The home page compares hourly electricity prices with **delivered** gas in an 80% efficient boiler:
+
+- ERCOT: 2025 real-time hub prices from `site/data/prices_years.json.gz` in the ERCOT Bids repository, against $0.40/therm ($4.00/MMBtu). Break-even is 4.00 / 0.80 × 3.412 ≈ $17/MWh for an electric boiler and twice that (≈ $34/MWh) for a heat pump at COP 2.
+- Wisconsin (MISO): a utility real-time rate, July 2025 to June 2026, against $0.65/therm ($6.50/MMBtu). Break-even ≈ $28/MWh for an electric boiler, $55/MWh for a COP 2 heat pump.
