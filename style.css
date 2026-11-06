@@ -78,7 +78,7 @@ h1 { font-size: clamp(36px, 6vw, 60px); line-height: 1.04; margin: 0 0 20px; max
 h2 { font-size: clamp(28px, 4vw, 38px); line-height: 1.1; margin: 0 0 16px; max-width: 24ch; }
 h3 { font-size: 20px; line-height: 1.2; margin: 0 0 8px; }
 .lede { font-size: clamp(17px, 2vw, 20px); color: var(--ink-2); max-width: 60ch; margin: 0 0 28px; }
-.intro { color: var(--ink-2); max-width: 64ch; margin: 0 0 36px; }
+.intro { color: var(--ink-2); max-width: 92ch; margin: 0 0 36px; }
 .ctas { display: flex; flex-wrap: wrap; gap: 12px; }
 
 /* hero */
@@ -94,7 +94,7 @@ h3 { font-size: 20px; line-height: 1.2; margin: 0 0 8px; }
 .stat .tag { font: 500 11px/1.3 var(--font-data); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
 .bar { height: 6px; border-radius: 3px; background: var(--line); overflow: hidden; }
 .bar span { display: block; height: 100%; background: var(--accent); }
-.footnote { font-size: 13px; color: var(--muted); max-width: 90ch; margin: 18px 0 0; }
+.footnote { font-size: 13px; color: var(--muted); max-width: none; margin: 18px 0 0; }
 h3.sub { margin-top: 40px; }
 .intro.tight { margin-bottom: 20px; }
 .intro.after { margin: 28px 0 0; }
