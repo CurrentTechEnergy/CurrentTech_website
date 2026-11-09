@@ -200,3 +200,6 @@ table.plain .num { text-align: right; font-family: var(--font-data); padding-rig
   .dc-tick { font-size: 23px; } .dc-axis { font-size: 21px; } .dc-label { font-size: 23px; } .dc-l1 { transform: translateY(-8px); } .dc-opt, .dc-note, .sc-opt { display: none; }
   .sc-txt { font-size: 18px; } .sc-note { font-size: 16px; }
 }
+table.plain.wide { max-width: 960px; }
+table.plain b, .prose b { color: var(--ink); font-weight: 500; }
+@media (max-width: 560px) { table.plain.wide th, table.plain.wide td { padding-right: 0; padding-left: 8px; } table.plain.wide th:first-child { padding-left: 0; } }
