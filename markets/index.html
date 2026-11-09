@@ -64,7 +64,7 @@
           <p class="tag">Heat pump, COP 2.0, beats gas</p>
           <span class="num"><span data-stat="ercot_west.hp_pct">63</span><small>%</small></span>
           <div class="bar" aria-hidden="true"><span data-stat-width="ercot_west.hp_pct" style="width:63%"></span></div>
-          <p>of hours at West Hub. About <span data-stat="ercot_west.hp_hours">5,530</span> hours.</p>
+          <p>of hours at West Hub. About <span data-stat="ercot_west.hp_hours">5,520</span> hours.</p>
         </div>
         <div class="stat">
           <p class="tag">Price below $0/MWh</p>
@@ -78,9 +78,9 @@
       <div class="stats">
         <div class="stat">
           <p class="tag">Electric boiler beats gas</p>
-          <span class="num"><span data-stat="wisconsin_rt_lmp.eb_pct">47</span><small>%</small></span>
-          <div class="bar" aria-hidden="true"><span data-stat-width="wisconsin_rt_lmp.eb_pct" style="width:47%"></span></div>
-          <p>of hours at the WPS zone. About <span data-stat="wisconsin_rt_lmp.eb_hours">4,150</span> hours, and <span data-stat="wisconsin_rt_lmp.spring_eb_pct">64</span>% of hours from April to June.</p>
+          <span class="num"><span data-stat="wisconsin_rt_lmp.eb_pct">48</span><small>%</small></span>
+          <div class="bar" aria-hidden="true"><span data-stat-width="wisconsin_rt_lmp.eb_pct" style="width:48%"></span></div>
+          <p>of hours at the WPS zone. About <span data-stat="wisconsin_rt_lmp.eb_hours">4,170</span> hours, and <span data-stat="wisconsin_rt_lmp.spring_eb_pct">64</span>% of hours from April to June.</p>
         </div>
         <div class="stat">
           <p class="tag">Heat pump, COP 2.0, beats gas</p>
@@ -102,7 +102,7 @@
           <p class="tag">Electric boiler beats gas</p>
           <span class="num"><span data-stat="spp_north.eb_pct">56</span><small>%</small></span>
           <div class="bar" aria-hidden="true"><span data-stat-width="spp_north.eb_pct" style="width:56%"></span></div>
-          <p>of hours at SPP North Hub. About <span data-stat="spp_north.eb_hours">4,880</span> hours.</p>
+          <p>of hours at SPP North Hub. About <span data-stat="spp_north.eb_hours">4,890</span> hours.</p>
         </div>
         <div class="stat">
           <p class="tag">Heat pump, COP 2.0, beats gas</p>
@@ -131,13 +131,13 @@
           <p class="tag">Electric boiler beats gas</p>
           <span class="num"><span data-stat="wisconsin.eb_pct">30</span><small>%</small></span>
           <div class="bar" aria-hidden="true"><span data-stat-width="wisconsin.eb_pct" style="width:30%"></span></div>
-          <p>of hours. About <span data-stat="wisconsin.eb_hours">2,620</span> hours, and <span data-stat="wisconsin.spring_eb_pct">50</span>% of hours from April to June.</p>
+          <p>of hours. About <span data-stat="wisconsin.eb_hours">2,640</span> hours, and <span data-stat="wisconsin.spring_eb_pct">50</span>% of hours from April to June.</p>
         </div>
         <div class="stat">
           <p class="tag">Heat pump, COP 2.0, beats gas</p>
           <span class="num"><span data-stat="wisconsin.hp_pct">81</span><small>%</small></span>
           <div class="bar" aria-hidden="true"><span data-stat-width="wisconsin.hp_pct" style="width:81%"></span></div>
-          <p>of hours. About <span data-stat="wisconsin.hp_hours">7,130</span> hours.</p>
+          <p>of hours. About <span data-stat="wisconsin.hp_hours">7,140</span> hours.</p>
         </div>
         <div class="stat">
           <p class="tag">Price below $0/MWh</p>
@@ -146,7 +146,7 @@
           <p>of hours. The rate has a $7/MWh floor, so it never goes below zero, even when MISO does.</p>
         </div>
       </div>
-      <p class="intro after">On MISO's raw real-time price at the same zone, an electric boiler beat gas in <span data-stat="wisconsin_rt_lmp.eb_pct">47</span>% of hours, not <span data-stat="wisconsin.eb_pct">30</span>%. The rate follows the day-ahead market, which misses many of the windy hours when real-time prices fall, and adds losses and a price floor.</p>
+      <p class="intro after">On MISO's raw real-time price at the same zone, an electric boiler beat gas in <span data-stat="wisconsin_rt_lmp.eb_pct">48</span>% of hours, not <span data-stat="wisconsin.eb_pct">30</span>%. The rate follows the day-ahead market, which misses many of the windy hours when real-time prices fall, and adds losses and a price floor.</p>
       <h3 class="sub">OG&amp;E (SPP): Day-Ahead Pricing</h3>
       <p class="intro tight">OG&amp;E prices each hour from SPP's day-ahead price for its zone, plus losses and 0.5¢/kWh, against Oklahoma gas at $<span data-stat="oge.gas_usd_therm">0.39</span> a therm. Only load above your baseline pays the hourly price, so a new electric boiler runs entirely on it.</p>
       <div class="stats">
@@ -169,7 +169,7 @@
           <p>of hours. About <span data-stat="oge.neg_hours">440</span> hours. With no floor, negative day-ahead prices pass straight through.</p>
         </div>
       </div>
-      <p class="footnote">ERCOT real-time hub prices, <span data-stat="site.ercot_period">Nov 8, 2025 to Nov 7, 2026</span>, against delivered gas at $<span data-stat="ercot_west.gas_usd_therm">0.36</span>/therm ($<span data-stat="ercot_west.gas_usd_mmbtu">3.63</span>/MMBtu) in an 80% efficient boiler (break-even about $<span data-stat="ercot_west.breakeven_eb">15</span>/MWh for an electric boiler, $<span data-stat="ercot_west.breakeven_hp">31</span>/MWh for a COP 2.0 heat pump). Electricity is wholesale energy only, before transmission and delivery charges, which is why how you contract for power matters as much as the equipment. Source: <a href="https://ercotbids.currenttech.energy/prices.html">ERCOT Bids</a>. MISO: real-time LMP at the Wisconsin Public Service zone (WPS.AZ), <span data-stat="site.miso_period">Nov 8, 2025 to Nov 7, 2026</span>, same gas. Wisconsin Public Service: hourly price under its real-time market pricing rate, which follows MISO day-ahead LMPs, <span data-stat="site.wisconsin_period">Nov 8, 2025 to Nov 7, 2026</span>, against delivered gas at $<span data-stat="wisconsin.gas_usd_therm">0.67</span>/therm ($<span data-stat="wisconsin.gas_usd_mmbtu">6.66</span>/MMBtu) in an 80% efficient boiler (break-even about $<span data-stat="wisconsin.breakeven_eb">28</span>/MWh for an electric boiler, $<span data-stat="wisconsin.breakeven_hp">57</span>/MWh for a COP 2.0 heat pump). SPP: real-time hub prices, <span data-stat="site.spp_period">Nov 3, 2025 to Nov 2, 2026</span>, against delivered gas in an 80% efficient boiler (break-even about $<span data-stat="spp_south.breakeven_eb">17</span>/MWh at South Hub, $<span data-stat="spp_north.breakeven_eb">24</span>/MWh at North Hub, for an electric boiler). OG&amp;E: Day-Ahead Pricing (Oklahoma schedule DAP) modeled as SPP day-ahead LMP for the OG&amp;E zone, plus 5.3% losses and 0.5¢/kWh, <span data-stat="site.oge_period">Nov 9, 2025 to Nov 8, 2026</span>, against Oklahoma gas (break-even about $<span data-stat="oge.breakeven_eb">17</span>/MWh). OG&amp;E's hourly prices are confidential to its customers, so these are our estimate from public SPP prices. Delivered gas is EIA's average industrial price for each state over the same months. Updated daily; last update <span data-stat="site.updated">Nov 8, 2026</span>.</p>
+      <p class="footnote">ERCOT real-time hub prices, <span data-stat="site.ercot_period">Nov 9, 2025 to Nov 8, 2026</span>, against delivered gas at $<span data-stat="ercot_west.gas_usd_therm">0.36</span>/therm ($<span data-stat="ercot_west.gas_usd_mmbtu">3.63</span>/MMBtu) in an 80% efficient boiler (break-even about $<span data-stat="ercot_west.breakeven_eb">15</span>/MWh for an electric boiler, $<span data-stat="ercot_west.breakeven_hp">31</span>/MWh for a COP 2.0 heat pump). Electricity is wholesale energy only, before transmission and delivery charges, which is why how you contract for power matters as much as the equipment. Source: <a href="https://ercotbids.currenttech.energy/prices.html">ERCOT Bids</a>. MISO: real-time LMP at the Wisconsin Public Service zone (WPS.AZ), <span data-stat="site.miso_period">Nov 9, 2025 to Nov 8, 2026</span>, same gas. Wisconsin Public Service: hourly price under its real-time market pricing rate, which follows MISO day-ahead LMPs, <span data-stat="site.wisconsin_period">Nov 9, 2025 to Nov 8, 2026</span>, against delivered gas at $<span data-stat="wisconsin.gas_usd_therm">0.67</span>/therm ($<span data-stat="wisconsin.gas_usd_mmbtu">6.66</span>/MMBtu) in an 80% efficient boiler (break-even about $<span data-stat="wisconsin.breakeven_eb">28</span>/MWh for an electric boiler, $<span data-stat="wisconsin.breakeven_hp">57</span>/MWh for a COP 2.0 heat pump). SPP: real-time hub prices, <span data-stat="site.spp_period">Nov 4, 2025 to Nov 3, 2026</span>, against delivered gas in an 80% efficient boiler (break-even about $<span data-stat="spp_south.breakeven_eb">17</span>/MWh at South Hub, $<span data-stat="spp_north.breakeven_eb">24</span>/MWh at North Hub, for an electric boiler). OG&amp;E: Day-Ahead Pricing (Oklahoma schedule DAP) modeled as SPP day-ahead LMP for the OG&amp;E zone, plus 5.3% losses and 0.5¢/kWh, <span data-stat="site.oge_period">Nov 11, 2025 to Nov 10, 2026</span>, against Oklahoma gas (break-even about $<span data-stat="oge.breakeven_eb">17</span>/MWh). OG&amp;E's hourly prices are confidential to its customers, so these are our estimate from public SPP prices. Delivered gas is EIA's average industrial price for each state over the same months. Updated daily; last update <span data-stat="site.updated">Nov 9, 2026</span>.</p>
     </div>
   </section>
 
@@ -199,11 +199,11 @@
             <rect data-stat-svgw="ercot_west.eb_pct" x="110" y="44" width="87" height="14" rx="3" style="fill:var(--accent)"/>
             <text x="0" y="96">Hub average</text>
             <rect x="110" y="84" width="300" height="14" rx="3" style="fill:var(--line)"/>
-            <rect data-stat-svgw="ercot_hubavg.hp_pct" x="110" y="84" width="193" height="14" rx="3" style="fill:var(--accent);opacity:.45"/>
+            <rect data-stat-svgw="ercot_hubavg.hp_pct" x="110" y="84" width="192" height="14" rx="3" style="fill:var(--accent);opacity:.45"/>
             <rect data-stat-svgw="ercot_hubavg.eb_pct" x="110" y="84" width="52" height="14" rx="3" style="fill:var(--accent)"/>
             <g font-family="IBM Plex Mono, monospace" font-size="12">
               <text data-stat-svgx="ercot_west.eb_pct" x="185" y="40"><tspan data-stat="ercot_west.eb_pct">29</tspan>%</text><text data-stat-svgx="ercot_west.hp_pct" x="287" y="40"><tspan data-stat="ercot_west.hp_pct">63</tspan>%</text>
-              <text data-stat-svgx="ercot_hubavg.eb_pct" x="150" y="80"><tspan data-stat="ercot_hubavg.eb_pct">17</tspan>%</text><text data-stat-svgx="ercot_hubavg.hp_pct" x="291" y="80"><tspan data-stat="ercot_hubavg.hp_pct">64</tspan>%</text>
+              <text data-stat-svgx="ercot_hubavg.eb_pct" x="150" y="80"><tspan data-stat="ercot_hubavg.eb_pct">17</tspan>%</text><text data-stat-svgx="ercot_hubavg.hp_pct" x="290" y="80"><tspan data-stat="ercot_hubavg.hp_pct">64</tspan>%</text>
             </g>
             <g font-size="12">
               <rect x="0" y="140" width="12" height="12" rx="2" style="fill:var(--accent)"/><text x="18" y="150">Electric boiler</text>
