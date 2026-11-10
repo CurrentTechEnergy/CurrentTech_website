@@ -8,6 +8,9 @@ updates every element in the HTML pages that carries a data-stat attribute:
   data-stat-width="region.key"  style width is set to the value as a percent
   data-stat-svgw="region.key"   SVG width is set to the value as a share of 300
   data-stat-svgx="region.key"   SVG x is set to 110 + share of 300 (bar labels)
+  data-geom="dc.key"            attributes of the price duration chart (path d,
+                                line and label positions) are redrawn, and the
+                                chart's hover data (var d={...}) is replaced
 
 Method, per region, over the trailing window (default 365 days, ending with
 the last full local day in the data):
@@ -37,6 +40,7 @@ DATA = os.path.join(ROOT, "data", "prices")
 CONFIG = json.load(open(os.path.join(HERE, "config.json")))
 UTC = dt.timezone.utc
 MMBTU_PER_MWH = 3.412
+PRICES = {}  # region -> hourly prices in its window, kept for the chart
 
 
 def load_series(file, market, node):
@@ -107,6 +111,7 @@ def region_stats(name, cfg, gas):
     be_hp = be_eb * CONFIG["heat_pump_cop"]
 
     vals = list(hours.values())
+    PRICES[name] = vals
     n = len(vals)
     spring = [p for t, p in hours.items() if t.astimezone(tz).month in (4, 5, 6)]
     cheap = CONFIG["cheap_threshold_usd_mwh"]
@@ -139,6 +144,58 @@ def region_stats(name, cfg, gas):
         "spring_eb_pct": round(100 * sum(p < be_eb for p in spring) / len(spring), 2) if spring else None,
         "mean_price": round(sum(vals) / n, 2),
     }
+
+
+# Price duration curve on the home page (svg#dc). Geometry must match the
+# SVG's viewBox, axes and the hover script in index.html.
+DC = {"region": "ercot_west", "W": 720, "H": 360, "L": 64, "R": 16, "T": 24, "B": 48,
+      "ymin": -40, "ymax": 100, "clamp": 400, "hover_step": 24}
+
+
+def duration_curve(prices, be):
+    """Geometry for the sorted-price chart: {element key: {attribute: value}}, plus hover data."""
+    c = DC
+    p = sorted(prices, reverse=True)
+    n = len(p)
+    pw, ph = c["W"] - c["L"] - c["R"], c["H"] - c["T"] - c["B"]
+    X = lambda i: c["L"] + pw * i / n
+    Y = lambda v: c["T"] + ph * (c["ymax"] - max(-c["clamp"], min(c["clamp"], v))) / (c["ymax"] - c["ymin"])
+    # Dense sampling where the curve is steep (the first ~400 hours), sparse after.
+    idx = sorted(set(list(range(0, 400, 2)) + list(range(408, n, 12)) + [n - 1]))
+    pts = lambda ii: " L".join(f"{X(i):.1f},{Y(p[i]):.1f}" for i in ii)
+    gy = min(max(Y(be), c["T"] + 30), c["H"] - c["B"] - 4)
+    k = sum(v >= be for v in p)  # hours at or above break-even; the curve crosses at rank k
+    cx = X(k)
+    # Keep the curve's label just above the curve near x=160.
+    i160 = round((160 - c["L"]) / pw * n)
+    label_y = max(c["T"] + 16, min(Y(p[i160]) - 19, gy - 40))
+    geom = {
+        "price": {"d": "M" + pts(idx)},
+        "area": {"d": f"M{cx:.1f},{gy:.1f} L" + pts([i for i in idx if i > k]) + f" L{X(n):.1f},{gy:.1f} Z"},
+        "gas": {"y1": f"{gy:.1f}", "y2": f"{gy:.1f}"},
+        "cross": {"x1": f"{cx:.1f}", "x2": f"{cx:.1f}", "y1": f"{gy:.1f}"},
+        "gas_label": {"y": f"{gy - 8:.1f}"},
+        "eb_label": {"y": f"{gy - 28:.1f}"},
+        "eb_hours": {"y": f"{gy - 8:.1f}"},
+        "price_label": {"y": f"{label_y:.1f}"},
+    }
+    hover = {"n": n, "step": c["hover_step"], **{k2: c[k2] for k2 in ("L", "R", "T", "B", "W", "H", "ymin", "ymax")},
+             "be": round(be, 2), "p": [round(v, 1) + 0.0 for v in p[::c["hover_step"]]]}
+    return geom, hover
+
+
+GEOM = re.compile(r'<[a-zA-Z]+[^>]*?\sdata-geom="(?P<ref>[^"]+)"[^>]*>')
+HOVER = re.compile(r'var d=\{"n":[^;]*?\]\}')
+
+
+def render_chart(html, geom, hover):
+    def tag(m):
+        t = m.group(0)
+        for attr, val in geom[m.group("ref").split(".", 1)[1]].items():
+            t = re.sub(rf'(\s{attr}=")[^"]*"', lambda mm: f'{mm.group(1)}{val}"', t, count=1)
+        return t
+    html = GEOM.sub(tag, html)
+    return HOVER.sub(lambda m: "var d=" + json.dumps(hover, separators=(",", ":")), html)
 
 
 def period_label(start, end):
@@ -224,6 +281,8 @@ def main():
             "ercot_hp_suffix": "%" if hp[0] == hp[1] else f"–{hp[1]}%",
             "ercot_hp_mid_pct": (hp[0] + hp[1]) / 2,
             "updated": dt.date.today().strftime("%b %-d, %Y"),
+            "dc_desc": (f"The sorted price curve falls below the gas boiler break-even line for roughly the cheapest "
+                        f"{round(e['eb_pct'])} percent of hours, and below zero for about {round(e['neg_pct'])} percent."),
         },
         "regions": regions,
     }
@@ -233,11 +292,14 @@ def main():
     with open(os.path.join(ROOT, "data", "market-stats.json"), "w") as f:
         json.dump(stats, f, indent=1)
         f.write("\n")
+    geom, hover = duration_curve(PRICES[DC["region"]], regions[DC["region"]]["breakeven_eb"])
     for page in glob.glob(os.path.join(ROOT, "**", "*.html"), recursive=True):
         html = open(page).read()
         if "data-stat" not in html:
             continue
         new = render(html, stats)
+        if "data-geom" in new:
+            new = render_chart(new, geom, hover)
         if new != html:
             open(page, "w").write(new)
             print(f"updated {os.path.relpath(page, ROOT)}", file=sys.stderr)
