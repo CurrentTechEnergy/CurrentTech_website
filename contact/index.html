@@ -71,6 +71,7 @@
               <option value="electrification">Flexible electric heat</option>
               <option value="contracting">Large load contracting or PPAs</option>
               <option value="analysis">Market analysis</option>
+              <option value="utilities">A utility tariff or pilot</option>
               <option value="other">Something else</option>
             </select>
           </div>
@@ -88,11 +89,17 @@
   </section>
 </main>
 
+<script>
+(function(){var t=new URLSearchParams(location.search).get('topic'),el=document.getElementById('c-topic');
+if(t&&el&&el.querySelector('option[value="'+t.replace(/[^a-z]/g,'')+'"]'))el.value=t;})();
+</script>
+
 <footer>
   <div class="wrap">
     <div class="foot-brand"><img src="../currenttech-logo.png" alt="CurrentTech Energy logo" width="128" height="128" loading="lazy"><span>© 2026 CurrentTech Energy</span></div>
     <nav aria-label="Footer">
       <a href="../tariff-analysis/">Tariff analysis</a>
+      <a href="../utilities/">For utilities</a>
       <a href="https://ercotbids.currenttech.energy/">ERCOT Bids</a>
       <a href="../contact/">Contact</a>
     </nav>

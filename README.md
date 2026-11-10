@@ -9,6 +9,7 @@ The static site for [currenttech.energy](https://currenttech.energy/). Plain HTM
 | `markets/index.html` | Redirect to `tariff-analysis/` (old address) |
 | `how-we-work/index.html` | Redirect to the home page (page folded into home) |
 | `about/index.html` | Redirect to the home page bio (keeps the old WordPress `/about/` URL) |
+| `utilities/index.html` | For utilities and renewable owners (linked from the home delivery section and the footer, not the top nav) |
 | `404.html` | Not found |
 | `style.css` | All styles, light and dark |
 
