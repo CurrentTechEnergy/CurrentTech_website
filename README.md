@@ -36,7 +36,7 @@ The home page numbers update themselves. Every day the **Update market prices** 
    - MISO real-time final and day-ahead ex-post LMPs: daily CSVs from docs.misoenergy.org.
    - SPP real-time (RTBM) LMPs at SPP North and South hubs, and day-ahead LMPs for the OG&E zone: daily CSVs from portal.spp.org.
    - Delivered natural gas: EIA monthly industrial and commercial price by state (not Henry Hub).
-2. `scripts/prices/stats.py` computes, for the last 365 days, the share of hours an electric boiler and a COP 2 heat pump beat an 80% efficient gas boiler, writes `data/market-stats.json`, and rewrites every element in the HTML that has a `data-stat` attribute.
+2. `scripts/prices/stats.py` computes, for the last 365 days, the share of hours an electric boiler and a COP 2 heat pump beat an 80% efficient gas boiler, writes `data/market-stats.json`, and rewrites every element in the HTML that has a `data-stat` attribute. It also redraws the home page's ERCOT West price duration curve (`svg#dc`) from the same 365 days: the curve, the gas break-even line, the crossing, the label positions (elements with `data-geom`), and the hover data in the page's inline script.
 
 Break-even is gas $/MMBtu / 0.80 × 3.412 for an electric boiler, times 2 for a heat pump. Gas is the EIA state industrial price averaged over the window's months; months EIA hasn't published yet use the same month a year earlier.
 
@@ -50,4 +50,4 @@ The page shows wholesale real-time prices by ISO first (ERCOT, MISO, SPP), then 
 
 Assumptions (window, efficiencies, nodes, gas states) live in `scripts/prices/config.json`. To refresh by hand: `pip install openpyxl xlrd`, then `python3 scripts/prices/fetch.py && python3 scripts/prices/stats.py`, or run the workflow from the Actions tab.
 
-When editing copy in `#numbers` or the ERCOT Bids chart, keep the `data-stat` attributes; the words around them are free to change.
+When editing copy in `#numbers` or the ERCOT Bids chart, keep the `data-stat` and `data-geom` attributes; the words around them are free to change.
