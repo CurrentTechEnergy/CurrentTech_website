@@ -30,7 +30,7 @@
     <a class="brand" href="./"><img src="favicon.svg" alt="" width="28" height="28"><span>CurrentTech Energy</span></a>
     <nav class="nav" aria-label="Main">
       <a href="./" class="home-link" aria-current="page">Home</a>
-      <a href="markets/" class="hide-sm">Tariff<span class="hide-xs"> analysis</span></a>
+      <a href="tariff-analysis/" class="hide-sm">Tariff<span class="hide-xs"> analysis</span></a>
       <a class="btn small" href="contact/">Contact</a>
     </nav>
   </div>
@@ -97,18 +97,19 @@
         <figcaption>ERCOT West Hub real-time prices, <span data-stat="site.ercot_period">Nov 9, 2025 to Nov 8, 2026</span>, against Texas industrial gas at $<span data-stat="ercot_west.gas_usd_therm">0.36</span> a therm. Wholesale energy only.</figcaption>
       </figure>
       <div class="prose">
-        <p>The same comparison in two other markets, over the same twelve months:</p>
+        <p>The same comparison in three other markets, over the same twelve months:</p>
       </div>
       <table class="plain">
-        <thead><tr><th scope="col">Market</th><th scope="col" class="num">Hours electric beat gas</th><th scope="col" class="num">Share of year</th><th scope="col" class="num">Delivered gas</th></tr></thead>
+        <thead><tr><th scope="col">Market</th><th scope="col" class="num">Hours electric beat gas</th><th scope="col" class="num">Share of year</th><th scope="col" class="num">Heat pump, COP 2.0</th><th scope="col" class="num">Delivered gas</th></tr></thead>
         <tbody>
-          <tr><th scope="row">ERCOT West Hub, Texas</th><td class="num"><span data-stat="ercot_west.eb_hours">2,550</span></td><td class="num"><span data-stat="ercot_west.eb_pct">29</span>%</td><td class="num">$<span data-stat="ercot_west.gas_usd_therm">0.36</span>/therm</td></tr>
-          <tr><th scope="row">MISO, Wisconsin</th><td class="num"><span data-stat="wisconsin_rt_lmp.eb_hours">4,170</span></td><td class="num"><span data-stat="wisconsin_rt_lmp.eb_pct">48</span>%</td><td class="num">$<span data-stat="wisconsin_rt_lmp.gas_usd_therm">0.67</span>/therm</td></tr>
-          <tr><th scope="row">SPP North Hub, Nebraska</th><td class="num"><span data-stat="spp_north.eb_hours">4,890</span></td><td class="num"><span data-stat="spp_north.eb_pct">56</span>%</td><td class="num">$<span data-stat="spp_north.gas_usd_therm">0.55</span>/therm</td></tr>
+          <tr><th scope="row">ERCOT West Hub, Texas</th><td class="num"><span data-stat="ercot_west.eb_hours">2,550</span></td><td class="num"><span data-stat="ercot_west.eb_pct">29</span>%</td><td class="num"><span data-stat="ercot_west.hp_pct">63</span>%</td><td class="num">$<span data-stat="ercot_west.gas_usd_therm">0.36</span>/therm</td></tr>
+          <tr><th scope="row">MISO, Wisconsin</th><td class="num"><span data-stat="wisconsin_rt_lmp.eb_hours">4,170</span></td><td class="num"><span data-stat="wisconsin_rt_lmp.eb_pct">48</span>%</td><td class="num"><span data-stat="wisconsin_rt_lmp.hp_pct">88</span>%</td><td class="num">$<span data-stat="wisconsin_rt_lmp.gas_usd_therm">0.67</span>/therm</td></tr>
+          <tr><th scope="row">SPP North Hub, Nebraska</th><td class="num"><span data-stat="spp_north.eb_hours">4,890</span></td><td class="num"><span data-stat="spp_north.eb_pct">56</span>%</td><td class="num"><span data-stat="spp_north.hp_pct">86</span>%</td><td class="num">$<span data-stat="spp_north.gas_usd_therm">0.55</span>/therm</td></tr>
+          <tr><th scope="row">SPP South Hub, Oklahoma</th><td class="num"><span data-stat="spp_south.eb_hours">3,250</span></td><td class="num"><span data-stat="spp_south.eb_pct">37</span>%</td><td class="num"><span data-stat="spp_south.hp_pct">78</span>%</td><td class="num">$<span data-stat="spp_south.gas_usd_therm">0.39</span>/therm</td></tr>
         </tbody>
       </table>
       <div class="prose">
-        <p>Updated daily. The <a href="markets/">tariff analysis</a> page has the detail for each market and rate, heat pumps included.</p>
+        <p>Updated daily. The <a href="tariff-analysis/">tariff analysis</a> page has the detail for each market and rate, also including evaluations for heat pumps.</p>
       </div>
     </div>
   </section>
@@ -117,7 +118,7 @@
     <div class="wrap">
       <h2>Keep your gas boilers. Add electric beside them.</h2>
       <div class="prose">
-        <p>An electric boiler runs in parallel with your existing natural gas boilers. It takes power only in cheap, highly-renewable hours, often power that would otherwise be curtailed, and the gas boilers carry the rest. Using electricity only during highly renewable hours results in low operating cost and low carbon emissions and the electric boiler minimizes equipment costs. The result is the lowest carbon, capex, and opex scope 1 decarbonization option.</p>
+        <p>An electric boiler runs in parallel with your existing natural gas boilers. It takes power only in cheap, highly-renewable hours, often power that would otherwise be curtailed, and the gas boilers carry the rest. Using electricity only during highly renewable hours results in low operating cost and low carbon emissions while the electric boiler minimizes equipment costs and technology risk. The result is the lowest carbon, capex, and opex scope 1 decarbonization option.</p>
       </div>
       <figure class="chart">
         <svg viewBox="0 0 520 236" role="img" aria-labelledby="sc-t" class="schem">
@@ -134,7 +135,7 @@
       </figure>
       <div class="prose">
         <p>Nothing downstream changes. The plant gets steam at the same pressure from the same header. When power prices spike the electric boiler is simply off and gas covers the load, so you take on none of the price risk that comes with going all-electric.</p>
-        <p>It also lines up with where carbon accounting is heading. The GHG Protocol's Scope 2 update may require matching electricity to the hour it was used, and a load that runs only in windy, sunny hours is the easy one to match. For the grid, it is demand that shows up exactly when wind and solar would otherwise be curtailed and stays off when the system is tight.</p>
+        <p>It also lines up with where carbon accounting is heading. The GHG Protocol's Scope 2 update may require matching electricity to the hour it was used, in the market it was used. The load that runs only in windy, sunny hours is the easy one to match. For the grid, it is demand that shows up exactly when wind and solar are abundant and stays off when the system is tight.</p>
       </div>
     </div>
   </section>
@@ -146,10 +147,10 @@
         <p>Wholesale prices aren't what shows up on a bill. Almost no US utility offers truly cheap, intermittent electricity, and where hourly access to the wholesale market does exist, the distribution tariff usually undoes it.</p>
         <p>For one client I evaluated an electric boiler to use negatively priced power in CAISO. PG&amp;E's large commercial and industrial distribution tariff has a monthly non-coincident demand charge, billed on the site's highest draw no matter when it happens. For that boiler, the demand charge alone came to more than the cost of running on natural gas for the month, before buying a single kilowatt-hour.</p>
         <p>But good rates exist, and they are worth finding. Wisconsin Public Service has a real-time market pricing rate that follows MISO's day-ahead price. On that rate, as billed, an electric boiler beat gas in <span data-stat="wisconsin.eb_pct">30</span>% of hours over the last year, about <span data-stat="wisconsin.eb_hours">2,640</span> hours, and <span data-stat="wisconsin.spring_eb_pct">50</span>% of hours from April to June.</p>
-        <p>OG&amp;E in Oklahoma has a Day-Ahead Pricing rate where only the load above your baseline pays the hourly price. A new electric boiler is all new load, so it runs entirely on that price, and your existing bill doesn't change. By our estimate from public SPP prices it beat gas in about <span data-stat="oge.eb_hours">1,430</span> hours.</p>
-        <p>In ERCOT, a site connected at transmission voltage pays essentially the market price plus a small retailer fee. Its transmission charge is set by its draw during four summer peak intervals a year, and a boiler that stays off for those pays no transmission cost at all.</p>
+        <p>OG&amp;E in Oklahoma has a Day-Ahead Pricing rate with the same structure. On that rate, electricity beats gas in about <span data-stat="oge.eb_hours">1,430</span> hours (limited mostly because Oklahoma gas is super cheap, at $<span data-stat="oge.gas_usd_therm">0.39</span> a therm).</p>
+        <p>In ERCOT, a site connected at transmission voltage can pay essentially the market price plus a small retailer fee. Its transmission charge is set by its draw during four summer peak intervals a year, and a boiler that stays off for those pays no transmission cost at all.</p>
         <p>We have also had good results with municipal and co-op utilities that are willing to pass the actual costs incurred to a load.</p>
-        <p>So we spend most of our time in utility tariff books. We work with sites and utilities to identify tariff and contracting options that keep delivery charges as low as possible: real-time rates like these, rates whose demand charges follow coincident peaks you can stay off, and special contracts where neither exists. <a href="markets/">Tariff analysis</a> has the numbers for each.</p>
+        <p>As you may be able to tell, we spend most of our time in utility tariff books. We work with sites and utilities to identify tariff and contracting options that keep delivery charges as low as possible: real-time rates like these, rates whose demand charges follow coincident peaks you can avoid, and special contracts where neither exists. <a href="tariff-analysis/">Tariff analysis</a> has the numbers for each.</p>
       </div>
     </div>
   </section>
@@ -159,8 +160,8 @@
       <h2>Own it, or buy the steam.</h2>
       <div class="prose">
         <p>You can do this as a turnkey project that you own. Or CurrentTech Energy can own and run the electric boiler and sell you steam at or below your gas cost, with no capital outlay.</p>
-        <p>Either way it fits big, year-round steam loads best. Our focus is industrial plants, and campuses and hospitals with a central plant can be good opportunities too. American factories make enough steam each year to match a third of the electricity the whole country uses, and almost all of it comes from gas (<a href="https://www.energy.gov/sites/default/files/2022-01/2018_mecs_all_manufacturing_energy_carbon_footprint.pdf">DOE</a>). Sites in wind- and solar-heavy regions usually have the most cheap hours, but send us every site. The screening ranks them.</p>
-        <p>A project starts with that free screening. From there we pick the technology and size it against real price history, with gas kept as the backup. We choose the tariff or supply contract so the savings show up on the bill. Then we set the switching rules with your controls team and run or support dispatch. Your operators keep the plant, and the gas boilers are always there.</p>
+        <p>Either way it fits big, year-round steam loads best. That mostly means industrial plants: American factories make enough steam each year to match a third of the electricity the whole country uses, and almost all of it comes from gas (<a href="https://www.energy.gov/sites/default/files/2022-01/2018_mecs_all_manufacturing_energy_carbon_footprint.pdf">DOE</a>). Campuses and hospitals with a central plant can be good opportunities too.</p>
+        <p>Sites in wind- and solar-heavy regions usually have the most cheap hours, but send us every site and the free screening will rank them. From there, we identify the technology and size the opportunity against real price history. We work to find the tariff or supply contract to get those savings up on the bill. Then we set the automated price-informed boiler rotation rules with your controls team. Your operators stay in charge of the plant, and the gas boilers remain as full backup.</p>
       </div>
     </div>
   </section>
@@ -170,9 +171,9 @@
       <img src="blair-willcox.jpg" alt="Blair Willcox at a CurrentTech Energy conference booth" width="640" height="800">
       <div class="prose">
         <h2>I'm Blair Willcox.</h2>
-        <p>I'm a licensed Professional Engineer with about 19 years in industrial energy efficiency, decarbonization and renewable procurement. I started out finding and cutting waste at plants, and I'm a US Department of Energy Qualified Specialist in process heating and compressed air systems. From there the work moved to decarbonization strategy for multi-site portfolios, including engagements for 15 of the Fortune 200, and then to four virtual PPAs behind hundreds of megawatts of new wind in ERCOT, SPP and AESO.</p>
-        <p>I started CurrentTech Energy after years of modeling electricity prices convinced me that cheap power could decarbonize process heat without tearing out the infrastructure plants already have. I speak on industrial decarbonization and grid-interactive load, and the same market work is public at <a href="https://ercotbids.currenttech.energy/">ERCOT Bids</a>, a free explorer of every ERCOT operating day.</p>
-        <p>I also take on PPA and large load contracting, and wholesale price analysis, as standalone work. <a href="contact/">Get in touch</a>.</p>
+        <p>I'm a licensed Professional Engineer with about 19 years in industrial energy efficiency, decarbonization and renewable procurement. I started out finding and cutting waste at plants, and I'm a US Department of Energy Qualified Specialist in process heating and compressed air systems. From there the work moved to decarbonization strategy for multi-site portfolios, including engagements for 15 of the Fortune 200, and then to four virtual PPAs behind hundreds of megawatts of new wind and solar in ERCOT, SPP and AESO.</p>
+        <p>I started CurrentTech Energy after years of modeling electricity prices convinced me that cheap power could decarbonize process heat without tearing out the infrastructure plants already have. I speak on industrial decarbonization and grid-interactive load and provide public access to detailed market dynamics analysis at <a href="https://ercotbids.currenttech.energy/">ERCOT Bids</a>, a free explorer of every ERCOT operating day.</p>
+        <p>I also take on PPAs, large load contracting, wholesale price analysis and other energy consulting services as standalone work. <a href="contact/">Get in touch</a>.</p>
       </div>
     </div>
   </section>
@@ -205,7 +206,7 @@ hit.addEventListener('mousemove',move);hit.addEventListener('touchmove',move,{pa
   <div class="wrap">
     <div class="foot-brand"><img src="currenttech-logo.png" alt="CurrentTech Energy logo" width="128" height="128" loading="lazy"><span>© 2026 CurrentTech Energy</span></div>
     <nav aria-label="Footer">
-      <a href="markets/">Tariff analysis</a>
+      <a href="tariff-analysis/">Tariff analysis</a>
       <a href="https://ercotbids.currenttech.energy/">ERCOT Bids</a>
       <a href="contact/">Contact</a>
     </nav>
