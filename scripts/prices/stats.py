@@ -293,6 +293,7 @@ def main():
         json.dump(stats, f, indent=1)
         f.write("\n")
     geom, hover = duration_curve(PRICES[DC["region"]], regions[DC["region"]]["breakeven_eb"])
+    changed = []
     for page in glob.glob(os.path.join(ROOT, "**", "*.html"), recursive=True):
         html = open(page).read()
         if "data-stat" not in html:
@@ -302,7 +303,23 @@ def main():
             new = render_chart(new, geom, hover)
         if new != html:
             open(page, "w").write(new)
+            changed.append(page)
             print(f"updated {os.path.relpath(page, ROOT)}", file=sys.stderr)
+    bump_sitemap(changed)
+
+
+def bump_sitemap(pages):
+    """Set <lastmod> to today for each sitemap URL whose page was just rewritten."""
+    path = os.path.join(ROOT, "sitemap.xml")
+    if not pages or not os.path.exists(path):
+        return
+    xml = open(path).read()
+    today = dt.datetime.now(UTC).strftime("%Y-%m-%d")
+    for page in pages:
+        rel = os.path.relpath(page, ROOT).replace(os.sep, "/")
+        url = "https://currenttech.energy/" + (rel[:-len("index.html")] if rel.endswith("index.html") else rel)
+        xml = re.sub(r"(<loc>" + re.escape(url) + r"</loc><lastmod>)[^<]*(</lastmod>)", rf"\g<1>{today}\g<2>", xml)
+    open(path, "w").write(xml)
 
 
 if __name__ == "__main__":
