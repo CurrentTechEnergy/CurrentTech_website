@@ -23,10 +23,13 @@ Then open http://localhost:8000.
 
 ## Publish with GitHub Pages
 
-1. **Settings → Pages**: Source "Deploy from a branch", branch `main`, folder `/ (root)`. The site appears at `https://currenttechenergy.github.io/CurrentTech_website/` (links are relative, so it works there).
-2. When it looks right, set **Custom domain** to `currenttech.energy` (this adds a `CNAME` file) and tick **Enforce HTTPS**.
-3. At the DNS provider, point the apex domain at GitHub Pages: A records `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`, and `www` as a CNAME to `currenttechenergy.github.io`. Leave the `ercotbids` record alone.
-4. Once the domain serves this site, the WordPress hosting can be cancelled.
+The site is live at https://currenttech.energy/, served by GitHub Pages from the `main` branch root (Settings → Pages: "Deploy from a branch", `main`, `/ (root)`).
+
+1. The custom domain is set by the `CNAME` file at the repo root. Keep it: the daily price job commits to `main`, and each commit republishes the site with that file, so the domain survives.
+2. DNS: A records for the apex `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`, and `www` as a CNAME to `currenttechenergy.github.io`. Leave the `ercotbids` record alone.
+3. Tick **Enforce HTTPS** in Settings → Pages once GitHub has issued the certificate.
+4. The old address, `https://currenttechenergy.github.io/CurrentTech_website/`, redirects here. Links in the pages are relative (the 404 page uses root paths), so nothing depends on a path prefix.
+5. Now that the domain serves this site, the WordPress hosting can be cancelled.
 
 ## Updating the numbers
 
